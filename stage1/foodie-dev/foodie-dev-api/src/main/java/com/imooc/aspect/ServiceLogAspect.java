@@ -1,6 +1,5 @@
 package com.imooc.aspect;
 
-import org.aopalliance.intercept.Joinpoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -41,8 +40,8 @@ public class ServiceLogAspect {
     public Object recordTimeLog(ProceedingJoinPoint joinPoint) throws Throwable {
 
         log.info("====== 开始执行 {}.{} ======",
-                        joinPoint.getTarget().getClass(),
-                        joinPoint.getSignature().getName());
+                joinPoint.getTarget().getClass(),
+                joinPoint.getSignature().getName());
 
         // 记录开始时间
         long begin = System.currentTimeMillis();
