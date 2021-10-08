@@ -1,0 +1,7 @@
+
+###查询订单条目列表
+POST http://localhost:8088/mycomments/pending
+Content-Type: application/x-www-form-urlencoded
+
+userId=1908189H7TNWDTXP&orderId=190827F4AK12R30H
+
