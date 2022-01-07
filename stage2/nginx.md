@@ -160,3 +160,115 @@ https://skyao.gitbooks.io/learning-nginx/content/documentation/keep_alive.html
 
 # 高可用
 
+## keepalived初体验
+
+ubuntu下安装
+
+```shell
+sudo apt-get install keepalived
+```
+
+创建编辑配置文件
+
+```shell
+sudo vim /etc/keepalived/keepalived.conf
+```
+
+### 主节点
+
+```conf
+global_defs {
+    # 路由id：当前安装keepalived节点主机的标识符，全局唯一
+        router_id keep_server1
+}
+#计算机节点
+vrrp_instance VI_1 {
+    #表示的状态，当前主机为主节点，MASTER/BACKUP
+    state MASTER
+    #当前实例绑定的网卡名称
+    interface ens33 
+    # 主、备机的 virtual_router_id 必须相同
+    virtual_router_id 51 
+    # 主、备机取不同的优先级，主机值较大，备份机值较小
+    priority 100 
+    # 主备之间同步检查的时间间隔，默认1S
+    advert_int 1
+    # 认证授权的密码，防止非法节点的进入
+    authentication {
+        auth_type PASS
+        auth_pass 1111
+    }
+    # 虚拟IP
+    virtual_ipaddress {
+        192.168.248.50
+    }
+}
+```
+
+### 备份节点
+
+```
+global_defs {
+    # 路由id：当前安装keepalived节点主机的标识符，全局唯一
+        router_id keep_server2
+}
+#计算机节点
+vrrp_instance VI_1 {
+    #表示的状态，当前主机为主节点，MASTER/BACKUP
+    state BACKUP
+    #当前实例绑定的网卡名称
+    interface ens33 
+    # 主、备机的 virtual_router_id 必须相同
+    virtual_router_id 51 
+    # 主、备机取不同的优先级，主机值较大，备份机值较小
+    priority 80 
+    # 主备之间同步检查的时间间隔，默认1S
+    advert_int 1
+    # 认证授权的密码，防止非法节点的进入
+    authentication {
+        auth_type PASS
+        auth_pass 1111
+    }
+    # 虚拟IP
+    virtual_ipaddress {
+        192.168.248.50
+    }
+}
+```
+
+启动
+
+```shell
+sudo service keepalived start
+```
+
+查看keepalived启动状态
+
+```shell
+sudo systemctl status keepalived
+```
+
+查看ubuntu网卡信息
+
+```shell
+ip addr show ens33
+```
+
+```
+2: ens33: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 00:0c:29:17:9d:ba brd ff:ff:ff:ff:ff:ff
+    altname enp2s1
+    inet 192.168.248.130/24 brd 192.168.248.255 scope global dynamic noprefixroute ens33
+       valid_lft 1715sec preferred_lft 1715sec
+    inet 192.168.248.50/32 scope global ens33
+       valid_lft forever preferred_lft forever
+    inet6 fe80::d9a7:dec9:a0f4:8b23/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+```
+
+停止keepalived
+
+```shell
+sudo service keepalived start
+```
+
