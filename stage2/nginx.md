@@ -269,6 +269,6 @@ ip addr show ens33
 停止keepalived
 
 ```shell
-sudo service keepalived start
+sudo service keepalived stop
 ```
 
