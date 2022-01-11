@@ -332,7 +332,7 @@ vrrp_instance VI_1 {
 
 ## keepalived---双主热备
 
-![](\img\1.png)
+![](img\1.png)
 
 ### 主1
 
@@ -428,10 +428,10 @@ vrrp_instance VI_2 {
 
 ## LVS
 
-![](\img\2.png)
+![](img\2.png)
 
-### NAT模式![](\img\3.png)
+### NAT模式![](img\3.png)
 
 ### TUN模式
 
-![](\img\4.png)
+![](img\4.png)
