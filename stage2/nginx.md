@@ -160,7 +160,7 @@ https://skyao.gitbooks.io/learning-nginx/content/documentation/keep_alive.html
 
 # 高可用
 
-## keepalived初体验
+## keepalived初体验---双机主备
 
 ubuntu下安装
 
@@ -272,3 +272,166 @@ ip addr show ens33
 sudo service keepalived stop
 ```
 
+### 配置脚本实现nginx挂机则挂掉keepalived
+
+check_nginx_alive_or_not.sh
+
+```shell
+#!/bin/bash
+
+A=`ps -C nginx --no-header |wc -l`
+# 判断nginx是否宕机，如果宕机了，尝试重启
+if [ $A -eq 0 ];then
+  service nginx restart
+  # 等待一小会再次检查nginx,如果没有启动成功,则停止keepalived，使其启动备用机
+  sleep 3
+  if [ `ps -C nginx --no-header |wc -l` -eq 0 ];then
+  	killall keepalived
+  fi
+fi
+```
+
+更新keepalived.conf
+
+```conf
+global_defs {
+    # 路由id：当前安装keepalived节点主机的标识符，全局唯一
+        router_id keep_server1
+}
+vrrp_script check_nginx_alive {
+    script "/etc/keepalived/check_nginx_alive_or_not.sh"
+    interval 2 #（检测脚本执行的间隔）
+    weight 10 # 如果脚本运行失败，则升级权重10
+}
+#计算机节点
+vrrp_instance VI_1 {
+    #表示的状态，当前主机为主节点，MASTER/BACKUP
+    state MASTER
+    #当前实例绑定的网卡名称
+    interface ens33 
+    # 主、备机的 virtual_router_id 必须相同
+    virtual_router_id 51 
+    # 主、备机取不同的优先级，主机值较大，备份机值较小
+    priority 100 
+    # 主备之间同步检查的时间间隔，默认1S
+    advert_int 1
+    # 认证授权的密码，防止非法节点的进入
+    authentication {
+        auth_type PASS
+        auth_pass 1111
+    }
+    track_script{
+      check_nginx_alive
+    }
+    # 虚拟IP
+    virtual_ipaddress {
+        192.168.248.50
+    }
+}
+```
+
+## keepalived---双主热备
+
+![](\img\1.png)
+
+### 主1
+
+```
+global_defs {
+    # 路由id：当前安装keepalived节点主机的标识符，全局唯一
+        router_id keep_server1
+}
+#计算机节点
+vrrp_instance VI_1 {
+    #表示的状态，当前主机为主节点，MASTER/BACKUP
+    state MASTER
+    #当前实例绑定的网卡名称
+    interface ens33 
+    # 主、备机的 virtual_router_id 必须相同
+    virtual_router_id 51 
+    # 主、备机取不同的优先级，主机值较大，备份机值较小
+    priority 100 
+    # 主备之间同步检查的时间间隔，默认1S
+    advert_int 1
+    # 认证授权的密码，防止非法节点的进入
+    authentication {
+        auth_type PASS
+        auth_pass 1111
+    }
+    # 虚拟IP
+    virtual_ipaddress {
+        192.168.248.50
+    }
+}
+vrrp_instance VI_2 {
+    state BACKUP
+    interface ens33 
+    virtual_router_id 52 
+    priority 80 
+    advert_int 1
+    authentication {
+        auth_type PASS
+        auth_pass 1111
+    }
+    virtual_ipaddress {
+        192.168.248.51
+    }
+}
+```
+
+
+
+### 主2
+
+```conf
+global_defs {
+    # 路由id：当前安装keepalived节点主机的标识符，全局唯一
+        router_id keep_server2
+}
+#计算机节点
+vrrp_instance VI_1 {
+    #表示的状态，当前主机为主节点，MASTER/BACKUP
+    state BACKUP
+    #当前实例绑定的网卡名称
+    interface ens33 
+    # 主、备机的 virtual_router_id 必须相同
+    virtual_router_id 51 
+    # 主、备机取不同的优先级，主机值较大，备份机值较小
+    priority 80 
+    # 主备之间同步检查的时间间隔，默认1S
+    advert_int 1
+    # 认证授权的密码，防止非法节点的进入
+    authentication {
+        auth_type PASS
+        auth_pass 1111
+    }
+    # 虚拟IP
+    virtual_ipaddress {
+        192.168.248.50
+    }
+}
+vrrp_instance VI_2 {
+    state MASTER
+    interface ens33 
+    virtual_router_id 52 
+    priority 100 
+    advert_int 1
+    authentication {
+        auth_type PASS
+        auth_pass 1111
+    }
+    virtual_ipaddress {
+        192.168.248.51
+    }
+}
+```
+
+## LVS
+
+![](\img\2.png)
+
+### NAT模式![](\img\3.png)
+
+### TUN模式
+
+![](\img\4.png)
