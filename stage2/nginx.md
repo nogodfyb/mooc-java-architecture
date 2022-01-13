@@ -435,3 +435,296 @@ vrrp_instance VI_2 {
 ### TUN模式
 
 ![](img\4.png)
+
+### DR模式
+
+![](img\5.png)
+
+#### 配置LVS节点
+
+##### 设置VIP（临时设置）
+
+永久设置VIP的方法需要用到的时候再研究。
+
+```shell
+sudo ifconfig ens33:1 192.168.248.150 netmask 255.255.0.0
+```
+
+设置之前
+
+![](img\6.png)
+
+设置之后
+
+![](img\7.png)
+
+#### ipvsadm
+
+安装
+
+```shell
+sudo apt-get install ipvsadm
+```
+
+#### 真实服务器配置VIP（本地回环）
+
+##### real-server1:
+
+配置前
+
+![](img\8.png)
+
+配置
+
+```shell
+ifconfig lo:0 192.168.248.150 netmask 255.255.255.255
+```
+
+配置后
+
+![](img\9.png)
+
+##### real-server2:
+
+同real-server1的配置一样
+
+#### 真实服务器配置ARP响应级别
+
+![](img\10.png)
+
+```shell
+echo "1">/proc/sys/net/ipv4/conf/all/arp_ignore   这个命令显示权限不够，改用下面的命令
+
+sudo bash -c 'echo 1 > /proc/sys/net/ipv4/conf/all/arp_ignore'
+```
+
+```shell
+sudo bash -c 'echo 1 > /proc/sys/net/ipv4/conf/lo/arp_ignore' 
+```
+
+```shell
+sudo bash -c 'echo 1 > /proc/sys/net/ipv4/conf/default/arp_ignore' 
+```
+
+这个配置一生效，最普通的判断方式就是192.168.248.150该ip ping不通了。
+
+![](img\11.png)
+
+```shell
+echo "2">/proc/sys/net/ipv4/conf/all/arp_announce 
+
+sudo bash -c 'echo 2 > /proc/sys/net/ipv4/conf/all/arp_announce'
+```
+
+```shell
+sudo bash -c 'echo 2 > /proc/sys/net/ipv4/conf/lo/arp_announce'
+```
+
+```shell
+sudo bash -c 'echo 2 > /proc/sys/net/ipv4/conf/default/arp_announce'
+```
+
+##### 路由配置(每台均要)
+
+```shell
+sudo route add -host 192.168.248.150 dev lo:0
+```
+
+#### ipvsadm配置集群规则
+
+查看
+
+```shell
+sudo ipvsadm -Ln
+```
+
+配置real-server的虚拟Ip
+
+```shell
+sudo ipvsadm -A -t 192.168.248.150:80 -s rr
+```
+
+![](img\12.png)
+
+```shell
+sudo ipvsadm -a -t 192.168.248.150:80 -r 192.168.248.130:80 -g
+```
+
+```shell
+sudo ipvsadm -a -t 192.168.248.150:80 -r 192.168.248.131:80 -g
+```
+
+![](img\13.png)
+
+查看状态验证DR模式
+
+```shell
+sudo ipvsadm -Ln --stats
+```
+
+![](img\14.png)
+
+Outpkts 和 OutBytes都为0 证明DR模式启动成功。
+
+LVS的持久化机制，连接在900s内都会，访问同一个real-server。
+
+![](img\15.png)
+
+### Keepalived+Lvs+Nginx
+
+之前没有结合keepalived的时候配置了负载均衡规则
+
+![](img\16.png)
+
+清除负载均衡规则
+
+```shell
+sudo ipvsadm -C
+```
+
+![](img\17.png)
+
+#### LVS+keepalived (1)
+
+```conf
+# Global Configuration
+global_defs {
+	router_id lvs1
+}
+ 
+# VRRP Configuration
+vrrp_instance LVS {
+	state MASTER
+	interface ens33
+	virtual_router_id 51
+	priority 100
+	advert_int 1
+	authentication {
+		auth_type PASS
+		auth_pass 1111
+	}
+ 
+	virtual_ipaddress {
+		192.168.248.150
+	}
+}
+ 
+# 配置集群访问IP地址
+virtual_server 192.168.248.150 80 {
+        # 健康检查时间，单位：1s
+		delay_loop 6
+        # 配置负载均衡的算法，默认是轮询
+		lb_algo rr
+        # 设置LVS的模式
+		lb_kind DR
+        # 设置会话持久化的时间s
+		persistence_timeout 5
+        # 协议 -t
+		protocol TCP
+ 
+	# 负载均衡的真实服务器，也就是nginx节点的具体的真实ip地址
+	real_server 192.168.248.130 80 {
+        # 权重
+		weight 1
+        # 健康检查
+        TCP_CHECK{
+            # 检查的端口
+            connect_port 80
+            # 超时时间 s
+            connect_timeout 2
+            # 重试次数 次
+            nb_get_retry 2
+            # 间隔时间 s
+            delay_before_retry 3
+        }
+	}
+ 
+	real_server 192.168.248.131 80 {
+		weight 1
+        TCP_CHECK{
+            connect_port 80
+            connect_timeout 2
+            nb_get_retry 2
+            delay_before_retry 3
+        }
+	}
+ 
+}
+```
+
+启动keepalived 之后
+
+![](img\18.png)
+
+为啥 persistence_timeout 5 设置未成功？（这个待研究）
+
+![](img\19.png)
+
+#### LVS+keepalived (2)
+
+```conf
+# Global Configuration
+global_defs {
+	router_id lvs2
+}
+ 
+# VRRP Configuration
+vrrp_instance LVS {
+	state BACKUP
+	interface ens33
+	virtual_router_id 51
+	priority 80
+	advert_int 1
+	authentication {
+		auth_type PASS
+		auth_pass 1111
+	}
+ 
+	virtual_ipaddress {
+		192.168.248.150
+	}
+}
+ 
+# 配置集群访问IP地址
+virtual_server 192.168.248.150 80 {
+        # 健康检查时间，单位：1s
+		delay_loop 6
+        # 配置负载均衡的算法，默认是轮询
+		lb_algo rr
+        # 设置LVS的模式
+		lb_kind DR
+        # 设置会话持久化的时间s
+		persistence_timeout 1
+        # 协议 -t
+		protocol TCP
+ 
+	# 负载均衡的真实服务器，也就是nginx节点的具体的真实ip地址
+	real_server 192.168.248.130 80 {
+        # 权重
+		weight 1
+        # 健康检查
+        TCP_CHECK{
+            # 检查的端口
+            connect_port 80
+            # 超时时间 s
+            connect_timeout 2
+            # 重试次数 次
+            nb_get_retry 2
+            # 间隔时间 s
+            delay_before_retry 3
+        }
+	}
+ 
+	real_server 192.168.248.131 80 {
+		weight 1
+        TCP_CHECK{
+            connect_port 80
+            connect_timeout 2
+            nb_get_retry 2
+            delay_before_retry 3
+        }
+	}
+ 
+}
+```
+
