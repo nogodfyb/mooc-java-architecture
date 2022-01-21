@@ -106,6 +106,144 @@ aof-use-rdb-preamble yes
 
 ![](img\30.png)
 
-## 一主二从模式搭建
+## 一主二从模式搭建(读写分离)
 
 ![](img\31.png)
+
+### 从库
+
+```conf
+replicaof 192.168.248.128 6379
+#暴露在公网一定要密码
+masterauth <master-password>
+#默认配置 从库只读
+replica-read-only yes
+```
+
+![](img\32.png)
+
+### 主库
+
+可以不做特殊配置，因为默认的就是主库。
+
+# 无磁盘化复制
+
+WARNING: DISKLESS REPLICATION IS EXPERIMENTAL CURRENTLY
+
+```
+#默认是关闭的
+repl-diskless-sync no
+```
+
+# 缓存过期机制
+
+1. **惰性删除** ：只会在取出 key 的时候才对数据进行过期检查。这样对 CPU 最友好，但是可能会造成太多过期 key 没有被删除。
+2. **定期删除** ： 每隔一段时间抽取一批 key 执行删除过期 key 操作。并且，Redis 底层会通过限制删除操作执行的时长和频率来减少删除操作对 CPU 时间的影响。
+
+# 内存淘汰管理机制（缓存过期机制的补充）
+
+Redis 提供 6 种数据淘汰策略：
+
+1. **volatile-lru（least recently used）**：从已设置过期时间的数据集（server.db[i].expires）中挑选最近最少使用的数据淘汰
+2. **volatile-ttl**：从已设置过期时间的数据集（server.db[i].expires）中挑选将要过期的数据淘汰
+3. **volatile-random**：从已设置过期时间的数据集（server.db[i].expires）中任意选择数据淘汰
+4. **allkeys-lru（least recently used）**：当内存不足以容纳新写入数据时，在键空间中，移除最近最少使用的 key（这个是最常用的）
+5. **allkeys-random**：从数据集（server.db[i].dict）中任意选择数据淘汰
+6. **no-eviction**：禁止驱逐数据，也就是说当内存不足以容纳新写入数据时，新写入操作会报错。这个应该没人使用吧！
+
+4.0 版本后增加以下两种：
+
+1. **volatile-lfu（least frequently used）**：从已设置过期时间的数据集（server.db[i].expires）中挑选最不经常使用的数据淘汰
+2. **allkeys-lfu（least frequently used）**：当内存不足以容纳新写入数据时，在键空间中，移除最不经常使用的 key
+
+# 哨兵模式
+
+![](img\33.png)
+
+ubuntu需要安装
+
+```shell
+sudo apt install redis-sentinel
+```
+
+编辑sentinel.conf
+
+```conf
+# 注释掉
+# bind 127.0.0.1 ::1
+# 
+sentinel monitor mymaster 192.168.248.128 6379 2
+```
+
+重启
+
+```shell
+sudo service redis-sentinel restart
+```
+
+与springboot 整合
+
+```properties
+spring.redis.database= 0
+spring.redis.sentinel.master= mymaster
+spring.redis.sentinel.nodes= 192.168.248.130:26379,192.168.248.128:26379,192.168.248.131:26379
+```
+
+## 疑问
+
+表面上看起来是整合成功了，主库挂掉了，会重新在从库中选举产生新的主库。
+
+但是怎么证明读写分离是OK的呢？如果不OK，该怎么做呢，这个问题留待以后水平提高了来证明或处理。
+
+## 弊端
+
+主节点挂掉时，可能会导致一两秒内的数据没有同步到从库，所以造成了缓存数据丢失。
+
+# 三主三从集群模式
+
+![](img\34.png)
+
+redis1-6:redis.conf
+
+```
+#开启集群模式
+cluster-enabled yes
+#redis 自己维护的配置文件
+cluster-config-file nodes-6379.conf
+#超时时间
+cluster-node-timeout 5000
+#开启aof
+appendonly yes
+```
+
+创建集群命令：
+
+```shell
+redis-cli --cluster create ip1:6379 ip2:6379 ip3:6379 ip4:6379 ip5:6379 ip6:6379 --cluster-replicas 1
+
+redis-cli --cluster create 192.168.248.134:6379 192.168.248.135:6379 192.168.248.136:6379 192.168.248.137:6379 192.168.248.138:6379 192.168.248.139:6379 --cluster-replicas 1
+```
+
+![](img\37.png)
+
+检查集群信息
+
+```shell
+redis-cli --cluster check 192.168.248.134:6379
+```
+
+![](img\38.png)
+
+## 槽节点
+
+![](img\35.png)
+
+![](img\36.png)
+
+## 登录集群：
+
+```shell
+redis-cli -c -p 6379 -h 192.168.248.134
+```
+
+![](img\39.png)
