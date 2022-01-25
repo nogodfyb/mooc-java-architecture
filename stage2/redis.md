@@ -247,3 +247,73 @@ redis-cli -c -p 6379 -h 192.168.248.134
 ```
 
 ![](img\39.png)
+
+# 缓存穿透
+
+## 解决方案
+
+### 缓存无效KEY
+
+```java
+public Object getObjectInclNullById(Integer id) {
+    // 从缓存中获取数据
+    Object cacheValue = cache.get(id);
+    // 缓存为空
+    if (cacheValue == null) {
+        // 从数据库中获取
+        Object storageValue = storage.get(key);
+        // 缓存空对象
+        cache.set(key, storageValue);
+        // 如果存储数据为空，需要设置一个过期时间(300秒)
+        if (storageValue == null) {
+            // 必须设置过期时间，否则有被攻击的风险
+            cache.expire(key, 60 * 5);
+        }
+        return storageValue;
+    }
+    return cacheValue;
+}
+```
+
+### 布隆过滤器
+
+布隆过滤器在方案一(缓存无效KEY)之前，再加一层布隆过滤器过滤，分布式系统推荐使用redis的插件RedisBloom。
+
+# 缓存雪崩
+
+## 解决方案
+
+### 针对Redis服务不可用的情况
+
+1. 采用 Redis 集群，避免单机出现问题整个缓存服务都没办法使用。
+2. 限流，避免同时处理大量的请求。
+
+### 针对热点缓存失效的情况
+
+1. 设置不同的失效时间比如随机设置缓存的失效时间。
+2. 缓存永不失效。
+
+# 批量查询优化
+
+## 方案一
+
+```java
+ArrayList<String> keys = new ArrayList<>();
+
+keys.add("sys_dict:dfn_ft_machine_status");
+keys.add("sys_dict:dfn_ft_material_type");
+keys.add("sys_dict:shimo_pkg");
+
+List<String> list = stringRedisTemplate.opsForValue().multiGet(keys);
+```
+
+打开日志观察，如果采用遍历keys的方法来每个get，不仅从Java 代码本身来看效率低，消耗更多内存和时间，而且还有更频繁的以下日志出现。
+
+```
+2022-01-25 10:18:56.283 DEBUG 7120 --- [nio-8080-exec-1] o.s.d.redis.core.RedisConnectionUtils    : Opening RedisConnection
+2022-01-25 10:18:56.754 DEBUG 7120 --- [nio-8080-exec-1] o.s.d.redis.core.RedisConnectionUtils    : Closing Redis Connection.
+```
+
+## 方案二（管道）
+
+暂时未记录，等有更实用的使用场景再记录。
