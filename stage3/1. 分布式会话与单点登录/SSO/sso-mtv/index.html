@@ -35,7 +35,6 @@
 				// 通过cookie判断用户是否登录
 				this.judgeUserLoginStatus();
 
-				// http://www.mtv.com:8080/sso-mtv/index.html
 
 				// 判断用户是否登录
 				var userIsLogin = this.userIsLogin;
@@ -47,15 +46,16 @@
 						// 如果有tmpTicket临时票据，就携带临时票据发起请求到cas验证获取用户会话
 						var serverUrl = app.serverUrl;
 						axios.defaults.withCredentials = true;
-						axios.post('http://www.sso.com:8090/verifyTmpTicket?tmpTicket=' + tmpTicket)
+						axios.post('http://sso.com:8080/sso/verifyTmpTicket?tmpTicket=' + tmpTicket)
 							.then(res => {
+								console.log(res)
 								if (res.data.status == 200) {
 									var userInfo = res.data.data;
 									console.log(res.data.data);
 									this.userInfo = userInfo;
 									this.userIsLogin = true;
 									app.setCookie("user",  JSON.stringify(userInfo));
-									window.location.href = "http://www.mtv.com:8080/sso-mtv/index.html";
+									window.location.href = "http://mtv.com:8090";
 								} else {
 									alert(res.data.msg);
 									console.log(res.data.msg);
@@ -63,7 +63,7 @@
 							});
 					} else {
 						// 如果没有tmpTicket临时票据，说明用户从没登录过，那么就可以跳转至cas做统一登录认证了
-						window.location.href = app.SSOServerUrl + "/login?returnUrl=http://www.mtv.com:8080/sso-mtv/index.html";
+						window.location.href = app.SSOServerUrl + "/login?returnUrl=http://mtv.com:8090";
 					}
 
 					console.log(app.SSOServerUrl + "/login?returnUrl=" + window.location);
@@ -73,7 +73,7 @@
 				logout() {
 					var userId = this.userInfo.id;
 					axios.defaults.withCredentials = true;
-					axios.post('http://www.sso.com:8090/logout?userId=' + userId)
+					axios.post('http://sso.com:8080/sso/logout?userId=' + userId)
 						.then(res => {
 							if (res.data.status == 200) {
 								var userInfo = res.data.data;
@@ -84,7 +84,7 @@
 								app.deleteCookie("user");
 
 								alert("退出成功!");
-								
+
 							} else {
 								alert(res.data.msg);
 								console.log(res.data.msg);

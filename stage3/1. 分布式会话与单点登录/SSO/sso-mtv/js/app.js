@@ -1,6 +1,6 @@
 window.app = {
-    SSOServerUrl: "http://www.sso.com:8090",
-    cookieDomain: ".mtv.com",  
+    SSOServerUrl: "http://sso.com:8080/sso",
+    cookieDomain: "mtv.com",
 
     getCookie: function (cname) {
         var name = cname + "=";
@@ -22,7 +22,7 @@ window.app = {
 
     setCookie: function(name, value) {
         var Days = 365;
-        var exp = new Date(); 
+        var exp = new Date();
         exp.setTime(exp.getTime() + Days*24*60*60*1000);
         var cookieContent = name + "="+ encodeURIComponent (value) + ";path=/;";
         if (this.cookieDomain != null && this.cookieDomain != undefined && this.cookieDomain != '') {
@@ -82,7 +82,7 @@ window.app = {
                     // 删除主图在数组中的位置
                     foodieShopcart.splice(i, 1, tmpItem);
                 }
-            }   
+            }
             if (!isHavingItem) {
                 foodieShopcart.push(pendingItem);
             }
