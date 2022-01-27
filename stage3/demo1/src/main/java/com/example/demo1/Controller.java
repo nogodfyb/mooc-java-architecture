@@ -31,9 +31,11 @@ public class Controller {
      */
     @GetMapping("/index/{param}")
     public String index(HttpServletRequest request, @PathVariable String param) {
+
         HttpSession session = request.getSession();
         session.setAttribute("userInfo", "userInfo:" + param);
         return "index";
+
     }
 
 
@@ -46,9 +48,15 @@ public class Controller {
         redisOperator.set(REDIS_USER_TOKEN + ":" + "userId---xxx",
                 token);
 
-
         return "login1";
 
+    }
+
+    @PostMapping("api/getUser")
+    public String getUser() {
+
+
+        return "ok";
     }
 
 

@@ -1,2 +1,8 @@
 ###
 POST http://localhost:8080/login1
+
+
+###
+POST http://localhost:8080/api/getUser
+headerUserId:userId---xxx
+headerUserToken:68f20f86-796d-493c-9fea-04710a5eb3a9
