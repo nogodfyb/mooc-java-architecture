@@ -67,6 +67,36 @@ public class SsoController {
         return "login";
     }
 
+    @PostMapping("/logout")
+    @ResponseBody
+    public CommonResult logout(String userId,
+                               String userTicket,
+                               HttpServletRequest request,
+                               HttpServletResponse response) throws Exception {
+
+        // 0. 获取CAS中的用户门票
+        //String userTicket = getCookie(request, COOKIE_USER_TICKET);
+
+        // 1. 清除userTicket票据，redis/cookie
+        //deleteCookie(COOKIE_USER_TICKET, response);
+        redisOperator.del(REDIS_USER_TICKET + ":" + userTicket);
+
+        // 2. 清除用户全局会话（分布式会话）
+        redisOperator.del(REDIS_USER_TOKEN + ":" + userId);
+
+        return CommonResult.success();
+    }
+
+    private void deleteCookie(String key,
+                              HttpServletResponse response) {
+
+        Cookie cookie = new Cookie(key, null);
+        cookie.setDomain("sso.com");
+        cookie.setPath("/");
+        cookie.setMaxAge(-1);
+        response.addCookie(cookie);
+    }
+
 
     /**
      * CAS的统一登录接口
@@ -134,12 +164,13 @@ public class SsoController {
          */
 
 //        return "login";
-        return "redirect:" + returnUrl + "?tmpTicket=" + tmpTicket;
+        return "redirect:" + returnUrl + "?tmpTicket=" + tmpTicket + "&" + COOKIE_USER_TICKET + "=" + userTicket;
     }
 
     @PostMapping("/verifyTmpTicket")
     @ResponseBody
     public CommonResult verifyTmpTicket(String tmpTicket,
+                                        String userTicket,
                                         HttpServletRequest request,
                                         HttpServletResponse response) throws Exception {
 
@@ -147,28 +178,28 @@ public class SsoController {
         // 使用完毕后，需要销毁临时票据
         String tmpTicketValue = redisOperator.get(REDIS_TMP_TICKET + ":" + tmpTicket);
         if (StringUtils.isBlank(tmpTicketValue)) {
-            return CommonResult.failed("用户票据异常");
+            return CommonResult.failed("用户票据异常1");
         }
 
         // 0. 如果临时票据OK，则需要销毁，并且拿到CAS端cookie中的全局userTicket，以此再获取用户会话
         if (!tmpTicketValue.equals(MD5Utils.getMD5Str(tmpTicket))) {
-            return CommonResult.failed("用户票据异常");
+            return CommonResult.failed("用户票据异常2");
         } else {
             // 销毁临时票据
             redisOperator.del(REDIS_TMP_TICKET + ":" + tmpTicket);
         }
 
         // 1. 验证并且获取用户的userTicket
-        String userTicket = getCookie(request, COOKIE_USER_TICKET);
+        //String userTicket = getCookie(request, COOKIE_USER_TICKET);
         String userId = redisOperator.get(REDIS_USER_TICKET + ":" + userTicket);
         if (StringUtils.isBlank(userId)) {
-            return CommonResult.failed("用户票据异常");
+            return CommonResult.failed("用户票据异常3");
         }
 
         // 2. 验证门票对应的user会话是否存在
         String userRedis = redisOperator.get(REDIS_USER_TOKEN + ":" + userId);
         if (StringUtils.isBlank(userRedis)) {
-            return CommonResult.failed("用户票据异常");
+            return CommonResult.failed("用户票据异常4");
         }
 
         // 验证成功，返回OK，携带用户会话

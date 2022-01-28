@@ -17,6 +17,7 @@ public class CorsConfig {
         CorsConfiguration config = new CorsConfiguration();
         //spring boot 2.4更新
         config.addAllowedOriginPattern("*");
+        config.addAllowedOriginPattern("http://mtv.com:8090/");
         config.setAllowCredentials(true);
         config.addAllowedMethod("*");
         config.addAllowedHeader("*");

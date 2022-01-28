@@ -41,12 +41,14 @@
 				if (!userIsLogin) {
 					// 如果没有登录，判断一下是否存在tmpTicket临时票据
 					var tmpTicket = app.getUrlParam("tmpTicket");
+					var cookie_user_ticket = app.getUrlParam('cookie_user_ticket');
+					app.setCookie('cookie_user_ticket',cookie_user_ticket);
 					console.log("tmpTicket: " + tmpTicket);
 					if (tmpTicket != null && tmpTicket != "" && tmpTicket != undefined) {
 						// 如果有tmpTicket临时票据，就携带临时票据发起请求到cas验证获取用户会话
 						var serverUrl = app.serverUrl;
 						axios.defaults.withCredentials = true;
-						axios.post('http://sso.com:8080/sso/verifyTmpTicket?tmpTicket=' + tmpTicket)
+						axios.post('http://sso.com:8080/sso/verifyTmpTicket?tmpTicket=' + tmpTicket+'&userTicket='+cookie_user_ticket)
 							.then(res => {
 								console.log(res)
 								if (res.data.status == 200) {
@@ -73,7 +75,8 @@
 				logout() {
 					var userId = this.userInfo.id;
 					axios.defaults.withCredentials = true;
-					axios.post('http://sso.com:8080/sso/logout?userId=' + userId)
+					var userTicket = app.getCookie('cookie_user_ticket');
+					axios.post('http://sso.com:8080/sso/logout?userId=' + userId+'&userTicket='+userTicket)
 						.then(res => {
 							if (res.data.status == 200) {
 								var userInfo = res.data.data;
