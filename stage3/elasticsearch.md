@@ -227,3 +227,60 @@ Content-Type: application/json
 }
 ```
 
+# 分词与内置分词器
+
+## 内置分词器
+
+```http
+POST  http://192.168.248.128:9200/_analyze
+Content-Type: application/json
+
+{
+  "analyzer": "standard",
+  "text": "我在github学习"
+}
+```
+
+```json
+{
+  "tokens": [
+    {
+      "token": "我",
+      "start_offset": 0,
+      "end_offset": 1,
+      "type": "<IDEOGRAPHIC>",
+      "position": 0
+    },
+    {
+      "token": "在",
+      "start_offset": 1,
+      "end_offset": 2,
+      "type": "<IDEOGRAPHIC>",
+      "position": 1
+    },
+    {
+      "token": "github",
+      "start_offset": 2,
+      "end_offset": 8,
+      "type": "<ALPHANUM>",
+      "position": 2
+    },
+    {
+      "token": "学",
+      "start_offset": 8,
+      "end_offset": 9,
+      "type": "<IDEOGRAPHIC>",
+      "position": 3
+    },
+    {
+      "token": "习",
+      "start_offset": 9,
+      "end_offset": 10,
+      "type": "<IDEOGRAPHIC>",
+      "position": 4
+    }
+  ]
+}
+```
+
+中文分词不友好。
