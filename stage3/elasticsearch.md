@@ -284,3 +284,119 @@ Content-Type: application/json
 ```
 
 中文分词不友好。
+
+## 中文分词器
+
+```shell
+sudo unzip elasticsearch-analysis-ik-7.17.0.zip -d /usr/share/elasticsearch/plugins/ik
+```
+
+然后重启就安装完成。
+
+### ik_max_word
+
+```http
+###分词
+POST  http://192.168.248.128:9200/_analyze
+Content-Type: application/json
+
+{
+  "analyzer": "ik_max_word",
+  "text": "我在github学习"
+}
+```
+
+```json
+{
+  "tokens": [
+    {
+      "token": "我",
+      "start_offset": 0,
+      "end_offset": 1,
+      "type": "CN_CHAR",
+      "position": 0
+    },
+    {
+      "token": "在",
+      "start_offset": 1,
+      "end_offset": 2,
+      "type": "CN_CHAR",
+      "position": 1
+    },
+    {
+      "token": "github",
+      "start_offset": 2,
+      "end_offset": 8,
+      "type": "ENGLISH",
+      "position": 2
+    },
+    {
+      "token": "学习",
+      "start_offset": 8,
+      "end_offset": 10,
+      "type": "CN_WORD",
+      "position": 3
+    }
+  ]
+}{
+  "tokens": [
+    {
+      "token": "我",
+      "start_offset": 0,
+      "end_offset": 1,
+      "type": "CN_CHAR",
+      "position": 0
+    },
+    {
+      "token": "在",
+      "start_offset": 1,
+      "end_offset": 2,
+      "type": "CN_CHAR",
+      "position": 1
+    },
+    {
+      "token": "github",
+      "start_offset": 2,
+      "end_offset": 8,
+      "type": "ENGLISH",
+      "position": 2
+    },
+    {
+      "token": "学习",
+      "start_offset": 8,
+      "end_offset": 10,
+      "type": "CN_WORD",
+      "position": 3
+    }
+  ]
+}
+```
+
+### ik_smart
+
+ik_max_word: 会将文本做最细粒度的拆分，比如会将“中华人民共和国国歌”拆分为“中华人民共和国,中华人民,中华,华人,人民共和国,人民,人,民,共和国,共和,和,国国,国歌”，会穷尽各种可能的组合，适合 Term Query；
+
+ik_smart: 会做最粗粒度的拆分，比如会将“中华人民共和国国歌”拆分为“中华人民共和国,国歌”，适合 Phrase 查询。
+
+### 自定义中文词库
+
+# DSL搜索
+
+## 创建映射指定分词器
+
+```http
+POST http://192.168.248.128:9200/shop/_mapping
+Content-Type: application/json
+
+{
+  "properties": {
+    "id": {
+      "type": "long"
+    },
+    "desc": {
+      "type": "text",
+      "analyzer": "ik_max_word"
+    }
+  }
+}
+```
