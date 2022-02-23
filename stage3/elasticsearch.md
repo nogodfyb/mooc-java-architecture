@@ -385,18 +385,768 @@ ik_smart: 会做最粗粒度的拆分，比如会将“中华人民共和国国�
 ## 创建映射指定分词器
 
 ```http
-POST http://192.168.248.128:9200/shop/_mapping
+POST http://192.168.248.128:9200/book/_mapping
 Content-Type: application/json
 
 {
   "properties": {
-    "id": {
+    "bookId": {
       "type": "long"
     },
-    "desc": {
+    "score": {
+      "type": "float"
+    },
+    "scorerCount": {
+      "type": "long"
+    },
+    "title": {
       "type": "text",
       "analyzer": "ik_max_word"
+    },
+    "author": {
+      "type": "text",
+      "analyzer": "ik_max_word"
+    },
+    "countWord": {
+      "type": "long"
+    }
+  }
+}
+
+
+```
+
+## 自定义词典
+
+```
+仙
+仙逆
+诛仙
+```
+
+
+
+## 入门语法
+
+```http
+###单独一个字段的查询
+GET http://192.168.248.128:9200/book/_search?q=title:仙
+```
+
+```http
+###复合字段查询
+GET http://192.168.248.128:9200/book/_search?q=title:仙&q=score:7.7
+```
+
+
+
+```http
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "match": {
+      "title": "仙"
     }
   }
 }
 ```
+
+## 查询所有
+
+```http
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "match_all": {
+    }
+  }
+}
+```
+
+类比
+
+```sql
+select * from book
+```
+
+## 查询某些字段
+
+```http
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "match_all": {
+    }
+  },
+  "_source": ["title","author"]
+}
+```
+
+类比
+
+```sql
+select title , author from book
+```
+
+## 查询分页
+
+```http
+### 分页
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "match_all": {
+    }
+  },
+  "_source": [
+    "title",
+    "author"
+  ],
+  "from": 0,
+  "size": 2
+}
+```
+
+## term与match
+
+```http
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "term": {
+      "title": "诛仙"
+    }
+  },
+  "_source": [
+    "title",
+    "author"
+  ]
+}
+```
+
+```json
+    "hits": [
+      {
+        "_index": "book",
+        "_type": "_doc",
+        "_id": "6",
+        "_score": 1.951421,
+        "_source": {
+          "author": "萧鼎",
+          "title": "诛仙"
+        }
+      }
+    ]
+```
+
+
+
+```http
+###
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "match": {
+      "title": "诛仙"
+    }
+  },
+  "_source": [
+    "title",
+    "author"
+  ]
+}
+```
+
+```json
+"hits": [
+      {
+        "_index": "book",
+        "_type": "_doc",
+        "_id": "6",
+        "_score": 3.3464973,
+        "_source": {
+          "author": "萧鼎",
+          "title": "诛仙"
+        }
+      },
+      {
+        "_index": "book",
+        "_type": "_doc",
+        "_id": "18",
+        "_score": 1.3950763,
+        "_source": {
+          "author": "陈风笑",
+          "title": "官仙"
+        }
+      },
+      {
+        "_index": "book",
+        "_type": "_doc",
+        "_id": "7",
+        "_score": 1.1220688,
+        "_source": {
+          "author": "说梦者",
+          "title": "许仙志"
+        }
+      },
+      {
+        "_index": "book",
+        "_type": "_doc",
+        "_id": "10",
+        "_score": 1.0498221,
+        "_source": {
+          "author": "减肥专家",
+          "title": "幽冥仙途"
+        }
+      },
+      {
+        "_index": "book",
+        "_type": "_doc",
+        "_id": "15",
+        "_score": 1.0498221,
+        "_source": {
+          "author": "耳根",
+          "title": "仙逆"
+        }
+      },
+      {
+        "_index": "book",
+        "_type": "_doc",
+        "_id": "0",
+        "_score": 0.9238435,
+        "_source": {
+          "author": "忘语",
+          "title": "凡人修仙传"
+        }
+      }
+    ]
+```
+
+## terms
+
+```http
+### 搜索多个关键字
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "terms": {
+      "title": ["诛仙","仙逆"]
+    }
+  },
+  "_source": [
+    "title",
+    "author"
+  ]
+}
+```
+
+## match_phrase
+
+```http
+### 搜索多个关键字 多个关键字都必须包含在所搜索的字段中
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "match_phrase": {
+      "title": {
+        "query": "杨戬 人生"
+      }
+    }
+  },
+  "_source": [
+    "title",
+    "author"
+  ]
+}
+```
+
+杨戬必须要排在人生之前。
+
+```http
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "match_phrase": {
+      "title": {
+        "query": "人生 杨戬",
+        "slop": 3
+      }
+    }
+  },
+  "_source": [
+    "title",
+    "author"
+  ]
+}
+```
+
+slop代表中间可以跳过的字符。
+
+## operator
+
+```http
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "match": {
+      "title": {
+        "query": "诛仙门派",
+        "operator": "or"
+      }
+    }
+  },
+  "_source": [
+    "title",
+    "author"
+  ]
+}
+```
+
+```json
+"hits": [
+      {
+        "_index": "book",
+        "_type": "_doc",
+        "_id": "6",
+        "_score": 3.3464973,
+        "_source": {
+          "author": "萧鼎",
+          "title": "诛仙"
+        }
+      },
+      {
+        "_index": "book",
+        "_type": "_doc",
+        "_id": "18",
+        "_score": 1.3950763,
+        "_source": {
+          "author": "陈风笑",
+          "title": "官仙"
+        }
+      },
+      {
+        "_index": "book",
+        "_type": "_doc",
+        "_id": "8",
+        "_score": 1.2715712,
+        "_source": {
+          "author": "齐可休",
+          "title": "修真门派掌门路"
+        }
+      },
+      {
+        "_index": "book",
+        "_type": "_doc",
+        "_id": "7",
+        "_score": 1.1220688,
+        "_source": {
+          "author": "说梦者",
+          "title": "许仙志"
+        }
+      },
+      {
+        "_index": "book",
+        "_type": "_doc",
+        "_id": "10",
+        "_score": 1.0498221,
+        "_source": {
+          "author": "减肥专家",
+          "title": "幽冥仙途"
+        }
+      },
+      {
+        "_index": "book",
+        "_type": "_doc",
+        "_id": "15",
+        "_score": 1.0498221,
+        "_source": {
+          "author": "耳根",
+          "title": "仙逆"
+        }
+      },
+      {
+        "_index": "book",
+        "_type": "_doc",
+        "_id": "0",
+        "_score": 0.9238435,
+        "_source": {
+          "author": "忘语",
+          "title": "凡人修仙传"
+        }
+      }
+    ]
+```
+
+## minimum_should_match
+
+```http
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "match": {
+      "title": {
+        "query": "诛仙门派",
+        "minimum_should_match": "50%"
+      }
+    }
+  },
+  "_source": [
+    "title",
+    "author"
+  ]
+}
+```
+
+这就是一个匹配度，百分比。
+
+```http
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "match": {
+      "title": {
+        "query": "诛仙门派",
+        "minimum_should_match": "2"
+      }
+    }
+  },
+  "_source": [
+    "title",
+    "author"
+  ]
+}
+```
+
+诛仙门派经过分词之后，有两个词汇在搜索的条目中，就符合搜索条件。
+
+诛仙门派分词：诛仙 仙 门派
+
+## ids
+
+```http
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "ids": {
+      "type": "_doc",
+      "values": [
+        "1",
+        "2",
+        "3"
+      ]
+    }
+  },
+  "_source": [
+    "title",
+    "author"
+  ]
+}
+```
+
+## multi_match
+
+```http
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "multi_match": {
+      "query": "笑门派",
+      "fields": ["title","author"]
+    }
+  },
+  "_source": [
+    "title",
+    "author"
+  ]
+}
+```
+
+### 提高搜索字段的权重
+
+```http
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "multi_match": {
+      "query": "笑门派",
+      "fields": ["title^10","author"]
+    }
+  },
+  "_source": [
+    "title",
+    "author"
+  ]
+}
+```
+
+## 布尔
+
+### 示例1
+
+```http
+###
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "multi_match": {
+            "query": "笑仙",
+            "fields": [
+              "title^10",
+              "author"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "_source": [
+    "title",
+    "author"
+  ]
+}
+```
+
+### 示例2
+
+```http
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "multi_match": {
+            "query": "笑仙",
+            "fields": [
+              "title^10",
+              "author"
+            ]
+          }
+        },
+        {
+          "term": {
+            "scorerCount": 1567
+          }
+        }
+      ]
+    }
+  },
+  "_source": [
+    "title",
+    "author",
+    "scorerCount"
+  ]
+}
+```
+
+相当于AND
+
+### 示例3
+
+```http
+###
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "bool": {
+      "should": [
+        {
+          "multi_match": {
+            "query": "笑仙",
+            "fields": [
+              "title^10",
+              "author"
+            ]
+          }
+        },
+        {
+          "term": {
+            "scorerCount": 1567
+          }
+        }
+      ]
+    }
+  },
+  "_source": [
+    "title",
+    "author",
+    "scorerCount"
+  ]
+}
+```
+
+相等于OR
+
+### 示例4
+
+```http
+###
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "bool": {
+      "must_not": [
+        {
+          "multi_match": {
+            "query": "笑仙",
+            "fields": [
+              "title^10",
+              "author"
+            ]
+          }
+        },
+        {
+          "term": {
+            "scorerCount": 1567
+          }
+        }
+      ]
+    }
+  },
+  "_source": [
+    "title",
+    "author",
+    "scorerCount"
+  ]
+}
+```
+
+相当于  NOT IN
+
+must ,should,must_not都可以任意组合。
+
+### 示例5 加权
+
+```http
+###
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "bool": {
+      "should": [
+        {
+          "match": {
+            "title": {
+              "query": "诛仙",
+              "boost": 2
+            }
+          }
+        },
+        {
+          "match": {
+            "author": {
+              "query": "水",
+              "boost": 20
+            }
+          }
+        }
+      ]
+    }
+  },
+  "_source": [
+    "title",
+    "author",
+    "scorerCount"
+  ]
+}
+```
+
+## 过滤
+
+```http
+### 
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "match": {
+      "title": "诛仙"
+    }
+  },
+  "post_filter": {
+    "range": {
+      "scorerCount": {
+        "gte": 1000,
+        "lte": 2000
+      }
+    }
+  },
+  "_source": [
+    "title",
+    "author",
+    "scorerCount"
+  ]
+}
+```
+
+## 排序
+
+```http
+###
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "match": {
+      "title": "诛仙"
+    }
+  },
+  "sort": [
+    {
+      "scorerCount": "desc"
+    }
+  ],
+  "_source": [
+    "title",
+    "author",
+    "scorerCount"
+  ]
+}
+```
+
+进行了分词的字段，默认不能进行排序。可以为字段增加附属属性来进行排序。
