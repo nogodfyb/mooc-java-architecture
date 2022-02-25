@@ -1150,3 +1150,60 @@ Content-Type: application/json
 ```
 
 进行了分词的字段，默认不能进行排序。可以为字段增加附属属性来进行排序。
+
+## 高亮
+
+### 示例1
+
+```http
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "match": {
+      "title": "诛仙"
+    }
+  },
+  "highlight": {
+    "fields": {
+      "title": {}
+    }
+  },
+  "_source": [
+    "title",
+    "author",
+    "scorerCount"
+  ]
+}
+```
+
+### 示例2
+
+```http
+###
+POST http://192.168.248.128:9200/book/_doc/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "match": {
+      "title": "诛仙"
+    }
+  },
+  "highlight": {
+    "pre_tags": ["<span>"],
+    "post_tags": ["</span>"],
+    "fields": {
+      "title": {}
+    }
+  },
+  "_source": [
+    "title",
+    "author",
+    "scorerCount"
+  ]
+}
+```
+
+# 深度分页
