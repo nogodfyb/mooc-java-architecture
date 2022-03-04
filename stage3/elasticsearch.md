@@ -1207,3 +1207,229 @@ Content-Type: application/json
 ```
 
 # 深度分页
+
+分页的深度有限制，《=10000。
+
+index.max_result_window=10000是默认值，可以调整来规避这个限制。
+
+# 滚动搜索
+
+## 示例1
+
+```http
+POST http://192.168.248.128:9200/book/_search?scroll=1m
+Content-Type: application/json
+
+{
+  "query": {
+    "match_all": {
+    }
+  },
+  "_source": [
+    "title",
+    "author"
+  ],
+  "sort": [
+    "_doc"
+  ],
+  "size": 2
+}
+```
+
+## 示例2
+
+```http
+POST http://192.168.248.128:9200/_search/scroll
+Content-Type: application/json
+
+{
+  "scroll_id": "FGluY2x1ZGVfY29udGV4dF91dWlkDnF1ZXJ5VGhlbkZldGNoAxZwcEhCbXBDT1NHdVdUakx5LWwyd21RAAAAAAAAAIEWVFJJZEJ4NFJRS2lPcWIzdFhsNi1xdxZwcEhCbXBDT1NHdVdUakx5LWwyd21RAAAAAAAAAIIWVFJJZEJ4NFJRS2lPcWIzdFhsNi1xdxZwcEhCbXBDT1NHdVdUakx5LWwyd21RAAAAAAAAAIAWVFJJZEJ4NFJRS2lPcWIzdFhsNi1xdw==",
+  "scroll": "1m"
+}
+```
+
+# 批量操作
+
+## 查询
+
+```http
+POST http://192.168.248.128:9200/book/_doc/_mget
+Content-Type: application/json
+
+{
+  "ids": [
+    "1",
+    "2",
+    "3"
+  ]
+}
+```
+
+```json
+{
+  "docs": [
+    {
+      "_index": "book",
+      "_type": "_doc",
+      "_id": "1",
+      "_version": 1,
+      "_seq_no": 0,
+      "_primary_term": 1,
+      "found": true,
+      "_source": {
+        "bookId": 7639,
+        "score": 7.2,
+        "scorerCount": 3206,
+        "title": "大道争锋",
+        "author": "误道者",
+        "countWord": 7521900
+      }
+    },
+    {
+      "_index": "book",
+      "_type": "_doc",
+      "_id": "2",
+      "_version": 1,
+      "_seq_no": 1,
+      "_primary_term": 1,
+      "found": true,
+      "_source": {
+        "bookId": 121383,
+        "score": 6.9,
+        "scorerCount": 3203,
+        "title": "极道天魔",
+        "author": "滚开",
+        "countWord": 3854700
+      }
+    },
+    {
+      "_index": "book",
+      "_type": "_doc",
+      "_id": "3",
+      "_version": 1,
+      "_seq_no": 2,
+      "_primary_term": 1,
+      "found": true,
+      "_source": {
+        "bookId": 6999,
+        "score": 8.1,
+        "scorerCount": 2681,
+        "title": "灭运图录",
+        "author": "爱潜水的乌贼",
+        "countWord": 2846600
+      }
+    }
+  ]
+}
+
+```
+
+## bulk
+
+### create
+
+如果文档不存在，那么就创建它。存在会报错。发生异常报错不会影响其他操作。
+
+Postman
+
+```
+POST http://192.168.248.128:9200/_bulk
+Content-Type:application/json
+
+{"create": {"_index": "book","_type": "_doc", "_id": "21"}}
+{"bookId": "5566","title": "诛仙1"}
+{"create": {"_index": "book","_type": "_doc", "_id": "22"}}
+{"bookId": "556677","title": "诛仙2"}
+// 最后一行要回车
+```
+
+
+
+```
+POST http://192.168.248.128:9200/book/_doc/_bulk
+Content-Type:application/json
+
+{"create": {"_id": "21"}}
+{"bookId": "5566","title": "诛仙1"}
+{"create": {"_id": "22"}}
+{"bookId": "556677","title": "诛仙2"}
+// 最后一行要回车
+```
+
+
+
+### index
+
+创建一个新文档或者替换一个现有的文档。
+
+```
+POST http://192.168.248.128:9200/book/_doc/_bulk
+Content-Type:application/json
+
+{"index": {"_id": "21"}}
+{"bookId": "5566","title": "诛仙11"}
+{"index": {"_id": "22"}}
+{"bookId": "556677","title": "诛仙22"}
+{"index": {"_id": "23"}}
+{"bookId": "55667788","title": "诛仙33"}
+```
+
+
+
+### update
+
+部分更新一个文档
+
+### delete
+
+删除一个文档
+
+# 集群
+
+## 集群基本概念
+
+![](img\4.png)
+
+## 搭建集群
+
+用到时再学习并记录。
+
+## 集群分片
+
+![](img\5.png)
+
+## 宕机测试
+
+当某个节点宕机之后，分片及副本会在节点之间重新分配，保证整个集群数据的完整性。
+
+## 集群脑裂
+
+**什么是脑裂**
+
+如果发生网络中断或者服务器宕机，那么集群会有可能被划分为两个部分，各自有自己的master来管理，那么这就是脑裂。
+
+**脑裂解决方案**
+
+master主节点要经过多个master节点共同选举后才能成为新的主节点。就跟班级里选班长一样，并不是你1个人能决定的，需要班里半数以上的人决定。
+
+解决实现原理：半数以上的节点同意选举，节点方可成为新的master。
+
+discovery.zen.minimum_master_nodes=(N/2)+1
+
+N为集群的中master节点的数量，也就是那些 node.master=true 设置的那些服务器节点总数。
+
+**ES 7.X**
+
+在最新版7.x中， minimum_master_node 这个参数已经被移除了，这一块内容完全由es自身去管理，这样就避免了脑裂的问题，选举也会非常快。
+
+## 集群中文档读写原理
+
+![](img\6.png)
+
+![](img\7.png)
+
+
+
+# Logstash
+
+数据同步。
