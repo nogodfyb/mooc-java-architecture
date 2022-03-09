@@ -11,3 +11,15 @@
 ![](img\22.png)
 
 # pagecache与zerocopy
+
+## 普通copy
+
+![](img\23.png)
+
+## zerocopy
+
+![](img\24.png)
+
+# 集群模式
+
+![](img\25.png)
