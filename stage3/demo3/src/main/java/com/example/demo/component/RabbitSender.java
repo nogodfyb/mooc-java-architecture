@@ -25,6 +25,11 @@ public class RabbitSender {
         @Override
         public void confirm(CorrelationData correlationData, boolean ack, String cause) {
 
+            System.out.println("confirm");
+
+            System.err.println("confirm correlationData:" + correlationData);
+            System.err.println("confirm ack:" + ack);
+
         }
     };
 
@@ -51,7 +56,7 @@ public class RabbitSender {
             @Override
             public org.springframework.amqp.core.Message postProcessMessage(org.springframework.amqp.core.Message message) throws AmqpException {
 
-                System.out.println("post to do:" + message);
+                System.err.println("post to do:" + message);
 
                 return message;
             }
