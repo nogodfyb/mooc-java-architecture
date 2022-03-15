@@ -26,8 +26,8 @@ public class TestController {
 
         Map<String, Object> properties = new HashMap<String, Object>();
         properties.put("number", "12345");
-        properties.put("send_time", LocalDateTime.now().toString());
-        rabbitSender.send("Hello Rabbirmq For springboot!", properties);
+        properties.put("send_time", LocalDateTime.now());
+        rabbitSender.send("Hello Rabbirmq For springboot:" + LocalDateTime.now(), properties);
 
     }
 

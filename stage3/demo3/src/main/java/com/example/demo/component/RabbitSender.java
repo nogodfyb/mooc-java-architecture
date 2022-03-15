@@ -21,11 +21,12 @@ public class RabbitSender {
     private RabbitTemplate rabbitTemplate;
 
 
+    /**
+     * 确认消息已到达broker端
+     */
     final RabbitTemplate.ConfirmCallback confirmCallback = new RabbitTemplate.ConfirmCallback() {
         @Override
         public void confirm(CorrelationData correlationData, boolean ack, String cause) {
-
-            System.out.println("confirm");
 
             System.err.println("confirm correlationData:" + correlationData);
             System.err.println("confirm ack:" + ack);
