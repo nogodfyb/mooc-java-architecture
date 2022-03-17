@@ -29,10 +29,10 @@ public class RabbitBrokerImpl implements RabbitBroker {
 
 	@Autowired
 	private RabbitTemplateContainer rabbitTemplateContainer;
-	
+
 	@Autowired
 	private MessageStoreService messageStoreService;
-	
+
 	@Override
 	public void reliantSend(Message message) {
 		message.setMessageType(MessageType.RELIANT);
@@ -48,12 +48,12 @@ public class RabbitBrokerImpl implements RabbitBroker {
 			brokerMessage.setCreateTime(now);
 			brokerMessage.setUpdateTime(now);
 			brokerMessage.setMessage(message);
-			messageStoreService.insert(brokerMessage);			
+			messageStoreService.insert(brokerMessage);
 		}
 		//2. 执行真正的发送消息逻辑
 		sendKernel(message);
 	}
-	
+
 	/**
 	 * 	$rapidSend迅速发消息
 	 */
@@ -62,14 +62,14 @@ public class RabbitBrokerImpl implements RabbitBroker {
 		message.setMessageType(MessageType.RAPID);
 		sendKernel(message);
 	}
-	
+
 	/**
 	 * 	$sendKernel 发送消息的核心方法 使用异步线程池进行发送消息
 	 * @param message
 	 */
 	private void sendKernel(Message message) {
-		AsyncBaseQueue.submit((Runnable) () -> {
-			CorrelationData correlationData = 
+		AsyncBaseQueue.submit(() -> {
+			CorrelationData correlationData =
 					new CorrelationData(String.format("%s#%s#%s",
 							message.getMessageId(),
 							System.currentTimeMillis(),
@@ -78,7 +78,7 @@ public class RabbitBrokerImpl implements RabbitBroker {
 			String routingKey = message.getRoutingKey();
 			RabbitTemplate rabbitTemplate = rabbitTemplateContainer.getTemplate(message);
 			rabbitTemplate.convertAndSend(topic, routingKey, message, correlationData);
-			log.info("#RabbitBrokerImpl.sendKernel# send to rabbitmq, messageId: {}", message.getMessageId());			
+			log.info("#RabbitBrokerImpl.sendKernel# send to rabbitmq, messageId: {}", message.getMessageId());
 		});
 	}
 
@@ -92,8 +92,8 @@ public class RabbitBrokerImpl implements RabbitBroker {
 	public void sendMessages() {
 		List<Message> messages = MessageHolder.clear();
 		messages.forEach(message -> {
-			MessageHolderAyncQueue.submit((Runnable) () -> {
-				CorrelationData correlationData = 
+			MessageHolderAsyncQueue.submit((Runnable) () -> {
+				CorrelationData correlationData =
 						new CorrelationData(String.format("%s#%s#%s",
 								message.getMessageId(),
 								System.currentTimeMillis(),
@@ -102,8 +102,8 @@ public class RabbitBrokerImpl implements RabbitBroker {
 				String routingKey = message.getRoutingKey();
 				RabbitTemplate rabbitTemplate = rabbitTemplateContainer.getTemplate(message);
 				rabbitTemplate.convertAndSend(topic, routingKey, message, correlationData);
-				log.info("#RabbitBrokerImpl.sendMessages# send to rabbitmq, messageId: {}", message.getMessageId());			
-			});			
+				log.info("#RabbitBrokerImpl.sendMessages# send to rabbitmq, messageId: {}", message.getMessageId());
+			});
 		});
 	}
 

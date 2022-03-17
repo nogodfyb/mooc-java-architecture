@@ -8,12 +8,12 @@ import java.util.concurrent.TimeUnit;
 
 import lombok.extern.slf4j.Slf4j;
 @Slf4j
-public class MessageHolderAyncQueue {
+public class MessageHolderAsyncQueue {
 
 	private static final int THREAD_SIZE = Runtime.getRuntime().availableProcessors();
-	
+
 	private static final int QUEUE_SIZE = 10000;
-	
+
 	private static ExecutorService senderAsync =
 			new ThreadPoolExecutor(THREAD_SIZE,
 					THREAD_SIZE,
@@ -34,8 +34,8 @@ public class MessageHolderAyncQueue {
 							log.error("async sender is error rejected, runnable: {}, executor: {}", r, executor);
 						}
 					});
-			
+
 		public static void submit(Runnable runnable) {
 			senderAsync.submit(runnable);
-		}	
+		}
 }
