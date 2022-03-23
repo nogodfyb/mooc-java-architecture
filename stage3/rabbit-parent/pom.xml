@@ -12,7 +12,7 @@
   	<name>rabbit-parent</name>
   	<description>rabbit-parent</description>
   	<version>0.0.1-SNAPSHOT</version>
-  	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>8</java.version>
@@ -25,13 +25,13 @@
 	    <commons-io.version>2.4</commons-io.version>
 	    <commons-collections.version>3.2.2</commons-collections.version>
 		<curator.version>2.11.0</curator.version>
-		<fastjson.version>1.1.26</fastjson.version>        
-	</properties>  
+		<fastjson.version>1.1.26</fastjson.version>
+	</properties>
   	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
-		</dependency>  	
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -41,7 +41,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
-        </dependency>		
+        </dependency>
 		<dependency>
 		    <groupId>com.google.guava</groupId>
 		    <artifactId>guava</artifactId>
@@ -60,7 +60,7 @@
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<version>${fastjson.version}</version>
-		</dependency>    	
+		</dependency>
         <!--对json格式的支持 -->
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
@@ -70,12 +70,12 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-        </dependency>   
+        </dependency>
         <dependency>
             <groupId>com.fasterxml.uuid</groupId>
             <artifactId>java-uuid-generator</artifactId>
             <version>${fasterxml.uuid.version}</version>
-        </dependency>  
+        </dependency>
   	</dependencies>
   	<modules>
   		<module>rabbit-common</module>
@@ -83,4 +83,22 @@
   		<module>rabbit-core-producer</module>
   		<module>rabbit-task</module>
   	</modules>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.xml</include>
+				</includes>
+				<!-- 是否替换资源中的属性-->
+				<filtering>false</filtering>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+	</build>
+
 </project>
