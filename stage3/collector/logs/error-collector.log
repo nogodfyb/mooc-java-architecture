@@ -1,0 +1,2 @@
+[2022-03-27T22:18:02.132+08:00] [WARN] [http-nio-8001-exec-1-29] [com.bfxy.collector.web.IndexController] [DESKTOP-JHJVA51] [192.168.2.4] [collector] [IndexController.java,56,com.bfxy.collector.web.IndexController,index] [我是一条warn日志] ## ''
+[2022-03-27T22:18:02.133+08:00] [ERROR] [http-nio-8001-exec-1-29] [com.bfxy.collector.web.IndexController] [DESKTOP-JHJVA51] [192.168.2.4] [collector] [IndexController.java,58,com.bfxy.collector.web.IndexController,index] [我是一条error日志] ## ''
