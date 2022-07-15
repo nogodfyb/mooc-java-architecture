@@ -1,44 +1,32 @@
-######################################################################
-# Build Tools
-
-.gradle
-/build/
-!gradle/wrapper/gradle-wrapper.jar
-
+# maven ignore
 target/
-!.mvn/wrapper/maven-wrapper.jar
+*.jar
+*.war
+*.zip
+*.tar
+*.tar.gz
 
-######################################################################
-# IDE
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
+# eclipse ignore
+.settings/
 .project
-.settings
-.springBeans
+.classpath
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
+# idea ignore
+.idea/
 *.ipr
+*.iml
+*.iws
 
-### NetBeans ###
-nbproject/private/
-build/*
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
-
-######################################################################
-# Others
+# temp ignore
 *.log
-*.xml.versionsBackup
-*.swp
+*.cache
+*.diff
+*.patch
+*.tmp
+*.java~
+*.properties~
+*.xml~
 
-!*/build/*.java
-!*/build/*.html
-!*/build/*.xml
+# system ignore
+.DS_Store
+Thumbs.db
