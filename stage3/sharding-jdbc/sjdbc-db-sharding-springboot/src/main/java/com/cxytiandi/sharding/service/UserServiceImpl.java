@@ -1,19 +1,18 @@
 package com.cxytiandi.sharding.service;
 
-import java.util.List;
-
+import com.cxytiandi.sharding.po.User;
+import com.cxytiandi.sharding.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cxytiandi.sharding.po.User;
-import com.cxytiandi.sharding.repository.UserRepository;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserRepository userRepository;
-	
+
 	public List<User> list() {
 		return userRepository.list();
 	}
