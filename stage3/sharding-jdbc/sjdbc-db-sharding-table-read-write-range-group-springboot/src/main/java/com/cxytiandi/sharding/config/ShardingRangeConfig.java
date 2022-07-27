@@ -4,34 +4,34 @@ import java.util.List;
 
 public class ShardingRangeConfig {
 
-	private long start;
-	
-	private long end;
-	
-	private List<String> datasourceList;
+    private long start;
 
-	public long getStart() {
-		return start;
-	}
+    private long end;
 
-	public void setStart(long start) {
-		this.start = start;
-	}
+    private List<String> datasourceList;
 
-	public long getEnd() {
-		return end;
-	}
+    public long getStart() {
+        return start;
+    }
 
-	public void setEnd(long end) {
-		this.end = end;
-	}
+    public void setStart(long start) {
+        this.start = start;
+    }
 
-	public List<String> getDatasourceList() {
-		return datasourceList;
-	}
+    public long getEnd() {
+        return end;
+    }
 
-	public void setDatasourceList(List<String> datasourceList) {
-		this.datasourceList = datasourceList;
-	}
-	
+    public void setEnd(long end) {
+        this.end = end;
+    }
+
+    public List<String> getDatasourceList() {
+        return datasourceList;
+    }
+
+    public void setDatasourceList(List<String> datasourceList) {
+        this.datasourceList = datasourceList;
+    }
+
 }

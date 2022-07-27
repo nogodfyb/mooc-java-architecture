@@ -9,15 +9,24 @@ import com.cxytiandi.sjdbc.service.UserService;
 
 @RestController
 public class UserController {
-	
+
 	@Autowired
 	private UserService userService;
-	
+
 	@GetMapping("/users")
 	public Object list() {
 		return userService.list();
 	}
-	
+
+
+	@GetMapping("listSlave")
+	public Object listSlave(){
+
+		return userService.listSlave();
+
+	}
+
+
 	@GetMapping("/add")
 	public Object add() {
 		User user = new User();
@@ -26,5 +35,5 @@ public class UserController {
 		user.setName("李四");
 		return userService.add(user);
 	}
-	
+
 }

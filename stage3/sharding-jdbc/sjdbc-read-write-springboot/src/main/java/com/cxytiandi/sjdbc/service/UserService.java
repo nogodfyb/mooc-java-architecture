@@ -7,7 +7,9 @@ import com.cxytiandi.sjdbc.po.User;
 public interface UserService {
 
 	List<User> list();
-	
+
+	List<User> listSlave();
+
 	Long add(User user);
-	
+
 }

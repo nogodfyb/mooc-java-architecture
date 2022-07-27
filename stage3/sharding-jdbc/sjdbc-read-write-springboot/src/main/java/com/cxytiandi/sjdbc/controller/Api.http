@@ -1,0 +1,7 @@
+GET http://localhost:8084/users
+
+###
+GET http://localhost:8084/add
+
+###
+GET http://localhost:8084/listSlave
