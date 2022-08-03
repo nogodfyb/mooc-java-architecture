@@ -6,7 +6,6 @@ import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
 import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import org.apache.rocketmq.common.message.MessageExt;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -24,21 +23,21 @@ public class ChangeOrderStatus implements MessageListenerConcurrently {
     @Override
     public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list,
                                                     ConsumeConcurrentlyContext consumeConcurrentlyContext) {
-        if (list == null || list.size()==0) return CONSUME_SUCCESS;
+        if (list == null || list.size() == 0) return CONSUME_SUCCESS;
 
         for (MessageExt messageExt : list) {
             String orderId = messageExt.getKeys();
             String msg = new String(messageExt.getBody());
-            System.out.println("msg="+msg);
+            System.out.println("msg=" + msg);
             Order order = orderMapper.selectByPrimaryKey(Integer.parseInt(orderId));
 
-            if (order==null) return RECONSUME_LATER;
+            if (order == null) return RECONSUME_LATER;
             try {
                 order.setOrderStatus(1);//已支付
                 order.setUpdateTime(new Date());
                 order.setUpdateUser(0);//系统更新
                 orderMapper.updateByPrimaryKey(order);
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
                 return RECONSUME_LATER;
             }
