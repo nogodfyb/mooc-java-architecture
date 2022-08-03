@@ -22,9 +22,9 @@ public class ConfigDb131 {
     @Bean("db131")
     public DataSource db131() {
         MysqlDataSource dataSource = new MysqlDataSource();
-        dataSource.setUser("imooc");
-        dataSource.setPassword("Imooc@123456");
-        dataSource.setUrl("jdbc:mysql://192.168.73.131:3306/xa_131");
+        dataSource.setUser("root");
+        dataSource.setPassword("123");
+        dataSource.setUrl("jdbc:mysql://192.168.226.128:3306/xa_131");
 
         return dataSource;
     }
