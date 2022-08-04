@@ -7,20 +7,24 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class OrderController {
+
     @Autowired
     private OrderService orderService;
 
     @RequestMapping("handleOrder")
-    public String handleOrder(int orderId){
+    public String handleOrder(int orderId) {
 
-        try{
+        try {
+
             int result = orderService.handleOrder(orderId);
 
             if (result == 0) return "success";
 
             return "fail";
-        }catch (Exception e){
+        } catch (Exception e) {
+
             return "fail";
+
         }
 
     }

@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 public class RocketMQConfig {
 
 
-    @Bean(initMethod = "start",destroyMethod = "shutdown")
+    @Bean(initMethod = "start", destroyMethod = "shutdown")
     public DefaultMQProducer producer() {
         DefaultMQProducer producer = new
                 DefaultMQProducer("paymentGroup");
@@ -21,7 +21,7 @@ public class RocketMQConfig {
         return producer;
     }
 
-    @Bean(initMethod = "start",destroyMethod = "shutdown")
+    @Bean(initMethod = "start", destroyMethod = "shutdown")
     public DefaultMQPushConsumer consumer(@Qualifier("messageListener") MessageListenerConcurrently messageListener) throws MQClientException {
         DefaultMQPushConsumer consumer = new
                 DefaultMQPushConsumer("paymentConsumerGroup");

@@ -5,15 +5,16 @@ import com.example.tccdemo.db132.model.Order;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.Date;
 
 @Service
 public class OrderService {
+
     @Resource
     private OrderMapper orderMapper;
 
     /**
-     *  订单回调接口
+     * 订单回调接口
+     *
      * @param orderId
      * @return 0:成功 1:订单不存在
      */
