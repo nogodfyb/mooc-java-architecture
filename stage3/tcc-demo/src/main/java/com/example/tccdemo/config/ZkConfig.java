@@ -13,7 +13,7 @@ public class ZkConfig {
     @Bean(initMethod="start",destroyMethod = "close")
     public CuratorFramework getCuratorFramework() {
         RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000, 3);
-        CuratorFramework client = CuratorFrameworkFactory.newClient("192.168.226.128:2181", retryPolicy);
+        CuratorFramework client = CuratorFrameworkFactory.newClient("localhost:2181", retryPolicy);
         return client;
     }
 }

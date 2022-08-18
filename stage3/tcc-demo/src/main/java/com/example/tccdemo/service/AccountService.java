@@ -17,16 +17,22 @@ public class AccountService {
     @Resource
     private AccountBMapper accountBMapper;
 
-    @Transactional(transactionManager = "tm131",rollbackFor = Exception.class)
-    public void transferAccount(){
+    /**
+     * 事务补偿机制
+     */
+    @Transactional(transactionManager = "tm131", rollbackFor = Exception.class)
+    public void transferAccount() {
+        // 账户A 减200
         AccountA accountA = accountAMapper.selectByPrimaryKey(1);
         accountA.setBalance(accountA.getBalance().subtract(new BigDecimal(200)));
         accountAMapper.updateByPrimaryKey(accountA);
 
+        // 账户B 加200
         AccountB accountB = accountBMapper.selectByPrimaryKey(2);
         accountB.setBalance(accountB.getBalance().add(new BigDecimal(200)));
         accountBMapper.updateByPrimaryKey(accountB);
 
+        // 捕获异常 手动写代码回滚账户B的操作
         try{
             int i = 1/0;
         }catch (Exception e){
@@ -43,8 +49,8 @@ public class AccountService {
             throw e;
         }
 
-    }
 
+    }
 
 
 }
