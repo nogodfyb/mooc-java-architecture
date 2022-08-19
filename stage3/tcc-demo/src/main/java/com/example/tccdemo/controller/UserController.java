@@ -48,7 +48,7 @@ public class UserController {
     @RequestMapping("updateUser")
     public String updateUser(User user, String token) throws Exception {
 
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
 
         if (user.getId() != null) {
             System.out.println("更新用户");

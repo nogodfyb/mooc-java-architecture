@@ -24,7 +24,7 @@ public class ConfigDb131 {
         dataSource.setUser("root");
         dataSource.setPassword("123");
         //dataSource.setUrl("jdbc:mysql://192.168.226.128:3306/xa_131");
-        dataSource.setUrl("jdbc:mysql://192.168.35.129:3306/xa_131");
+        dataSource.setUrl("jdbc:mysql://192.168.17.129:3306/xa_131");
 
         return dataSource;
     }

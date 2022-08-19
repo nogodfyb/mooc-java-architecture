@@ -26,11 +26,13 @@ public class OrderScheduler {
     @Resource
     private PaymentMsgMapper paymentMsgMapper;
 
+    // 定时任务 10秒钟执行一次
     @Scheduled(cron = "0/10 * * * * ?")
     public void orderNotify() throws IOException {
 
         PaymentMsgExample paymentMsgExample = new PaymentMsgExample();
         paymentMsgExample.createCriteria().andStatusEqualTo(0);//未发送
+        // 查询本地消息表中未发送的消息
         List<PaymentMsg> paymentMsgs = paymentMsgMapper.selectByExample(paymentMsgExample);
         if (paymentMsgs == null || paymentMsgs.size() == 0) return;
 
