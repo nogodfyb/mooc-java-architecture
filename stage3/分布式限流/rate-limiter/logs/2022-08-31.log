@@ -1,0 +1,8 @@
+[10:16:01.638] DEBUG [SpringContextShutdownHook]o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1338fb5, started on Tue Aug 30 08:09:43 CST 2022
+[10:16:01.649] DEBUG [SpringContextShutdownHook]o.s.c.e.PropertySourcesPropertyResolver - Found key 'spring.liveBeansView.mbeanDomain' in PropertySource 'systemProperties' with value of type String
+[10:16:01.660] DEBUG [SpringContextShutdownHook]o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase 2147483647
+[10:16:01.662] DEBUG [SpringContextShutdownHook]o.s.c.s.DefaultLifecycleProcessor - Bean 'webServerGracefulShutdown' completed its stop procedure
+[10:16:01.663] DEBUG [SpringContextShutdownHook]o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase 2147483646
+[10:16:01.754] DEBUG [SpringContextShutdownHook]o.s.c.s.DefaultLifecycleProcessor - Bean 'webServerStartStop' completed its stop procedure
+[10:16:01.755] DEBUG [SpringContextShutdownHook]o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[10:16:01.756] DEBUG [SpringContextShutdownHook]o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'

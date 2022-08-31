@@ -1,0 +1,1434 @@
+[08:09:43.445] DEBUG [main]o.s.c.e.PropertySourcesPropertyResolver - Found key 'spring.application.name' in PropertySource 'configurationProperties' with value of type String
+[08:09:43.461] INFO  [main]c.i.s.RateLimiterApplication - Starting RateLimiterApplication using Java 1.8.0_333 on DESKTOP-5MH9S46 with PID 6088 (C:\study\mooc-java-architecture\stage3\分布式限流\rate-limiter\target\classes started by nogodfyb in C:\study\mooc-java-architecture\stage3\分布式限流\rate-limiter)
+[08:09:43.461] DEBUG [main]c.i.s.RateLimiterApplication - Running with Spring Boot v2.4.6, Spring v5.3.7
+[08:09:43.461] INFO  [main]c.i.s.RateLimiterApplication - No active profile set, falling back to default profiles: default
+[08:09:43.461] DEBUG [main]o.s.b.SpringApplication - Loading source class com.imooc.springcloud.RateLimiterApplication
+[08:09:43.514] DEBUG [main]o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1338fb5
+[08:09:43.545] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+[08:09:43.561] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+[08:09:43.623] DEBUG [main]o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\study\mooc-java-architecture\stage3\分布式限流\rate-limiter\target\classes\com\imooc\springcloud\Controller.class]
+[08:09:43.845] DEBUG [main]o.s.c.e.PropertySourcesPropertyResolver - Found key 'spring.jmx.enabled' in PropertySource 'configurationProperties' with value of type String
+[08:09:43.847] DEBUG [main]o.s.c.e.PropertySourcesPropertyResolver - Found key 'spring.application.admin.enabled' in PropertySource 'configurationProperties' with value of type String
+[08:09:44.010] DEBUG [main]o.s.c.e.PropertySourcesPropertyResolver - Found key 'spring.jmx.enabled' in PropertySource 'configurationProperties' with value of type String
+[08:09:44.017] DEBUG [main]o.s.c.e.PropertySourcesPropertyResolver - Found key 'spring.application.admin.enabled' in PropertySource 'configurationProperties' with value of type String
+[08:09:44.129] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'propertySourcesPlaceholderConfigurer'
+[08:09:44.129] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+[08:09:44.129] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'preserveErrorControllerTargetClassPostProcessor'
+[08:09:44.129] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+[08:09:44.129] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+[08:09:44.129] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+[08:09:44.129] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor'
+[08:09:44.129] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinder'
+[08:09:44.129] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinderFactory'
+[08:09:44.145] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'webServerFactoryCustomizerBeanPostProcessor'
+[08:09:44.150] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'errorPageRegistrarBeanPostProcessor'
+[08:09:44.152] DEBUG [main]o.s.u.c.s.UiApplicationContextUtils - Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@4e904fd5]
+[08:09:44.153] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'tomcatServletWebServerFactory'
+[08:09:44.153] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryConfiguration$EmbeddedTomcat'
+[08:09:44.192] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'websocketServletWebServerCustomizer'
+[08:09:44.192] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration$TomcatWebSocketConfiguration'
+[08:09:44.193] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'servletWebServerFactoryCustomizer'
+[08:09:44.194] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryAutoConfiguration'
+[08:09:44.200] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+[08:09:44.209] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.properties.BoundConfigurationProperties'
+[08:09:44.217] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'servletWebServerFactoryCustomizer' via factory method to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+[08:09:44.218] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'tomcatServletWebServerFactoryCustomizer'
+[08:09:44.218] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'tomcatServletWebServerFactoryCustomizer' via factory method to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+[08:09:44.219] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'tomcatWebServerFactoryCustomizer'
+[08:09:44.219] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration$TomcatWebServerFactoryCustomizerConfiguration'
+[08:09:44.219] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'tomcatWebServerFactoryCustomizer' via factory method to bean named 'environment'
+[08:09:44.219] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'tomcatWebServerFactoryCustomizer' via factory method to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+[08:09:44.220] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'localeCharsetMappingsCustomizer'
+[08:09:44.220] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration'
+[08:09:44.223] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration' via constructor to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+[08:09:44.247] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'errorPageCustomizer'
+[08:09:44.247] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration'
+[08:09:44.248] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration' via constructor to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+[08:09:44.249] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'dispatcherServletRegistration'
+[08:09:44.249] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration'
+[08:09:44.250] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'dispatcherServlet'
+[08:09:44.250] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletConfiguration'
+[08:09:44.250] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+[08:09:44.253] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'dispatcherServlet' via factory method to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+[08:09:44.265] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'dispatcherServletRegistration' via factory method to bean named 'dispatcherServlet'
+[08:09:44.265] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'dispatcherServletRegistration' via factory method to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+[08:09:44.266] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'multipartConfigElement'
+[08:09:44.266] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration'
+[08:09:44.267] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties'
+[08:09:44.270] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration' via constructor to bean named 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties'
+[08:09:44.275] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'errorPageCustomizer' via factory method to bean named 'dispatcherServletRegistration'
+[08:09:44.344] DEBUG [main]o.s.b.w.e.t.TomcatServletWebServerFactory - Code archive: C:\Users\nogodfyb\.m2\repository\org\springframework\boot\spring-boot\2.4.6\spring-boot-2.4.6.jar
+[08:09:44.344] DEBUG [main]o.s.b.w.e.t.TomcatServletWebServerFactory - Code archive: C:\Users\nogodfyb\.m2\repository\org\springframework\boot\spring-boot\2.4.6\spring-boot-2.4.6.jar
+[08:09:44.344] DEBUG [main]o.s.b.w.e.t.TomcatServletWebServerFactory - None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.
+[08:09:44.375] INFO  [main]o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 10086 (http)
+[08:09:44.375] INFO  [main]o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-10086"]
+[08:09:44.375] INFO  [main]o.a.c.c.StandardService - Starting service [Tomcat]
+[08:09:44.375] INFO  [main]o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+[08:09:44.477] INFO  [main]o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+[08:09:44.477] DEBUG [main]o.s.b.w.s.c.ServletWebServerApplicationContext - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+[08:09:44.477] INFO  [main]o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 963 ms
+[08:09:44.481] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'requestContextFilter'
+[08:09:44.483] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'formContentFilter'
+[08:09:44.483] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration'
+[08:09:44.486] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'characterEncodingFilter'
+[08:09:44.492] DEBUG [main]o.s.b.w.s.ServletContextInitializerBeans - Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+[08:09:44.492] DEBUG [main]o.s.b.w.s.ServletContextInitializerBeans - Mapping servlets: dispatcherServlet urls=[/]
+[08:09:44.514] DEBUG [main]o.s.b.w.s.f.OrderedRequestContextFilter - Filter 'requestContextFilter' configured for use
+[08:09:44.514] DEBUG [main]o.s.b.w.s.f.OrderedCharacterEncodingFilter - Filter 'characterEncodingFilter' configured for use
+[08:09:44.514] DEBUG [main]o.s.b.w.s.f.OrderedFormContentFilter - Filter 'formContentFilter' configured for use
+[08:09:44.514] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'rateLimiterApplication'
+[08:09:44.529] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'controller'
+[08:09:44.529] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.AutoConfigurationPackages'
+[08:09:44.529] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration'
+[08:09:44.529] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration'
+[08:09:44.529] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.properties.EnableConfigurationPropertiesRegistrar.methodValidationExcludeFilter'
+[08:09:44.529] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration'
+[08:09:44.529] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration'
+[08:09:44.529] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'taskExecutorBuilder'
+[08:09:44.529] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties'
+[08:09:44.529] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'taskExecutorBuilder' via factory method to bean named 'spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties'
+[08:09:44.529] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration'
+[08:09:44.529] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'error'
+[08:09:44.545] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'beanNameViewResolver'
+[08:09:44.545] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration'
+[08:09:44.545] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
+[08:09:44.545] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.web-org.springframework.boot.autoconfigure.web.WebProperties'
+[08:09:44.545] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration' via constructor to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1338fb5'
+[08:09:44.545] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration' via constructor to bean named 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
+[08:09:44.545] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration' via constructor to bean named 'spring.web-org.springframework.boot.autoconfigure.web.WebProperties'
+[08:09:44.545] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'conventionErrorViewResolver'
+[08:09:44.545] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'errorAttributes'
+[08:09:44.545] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'basicErrorController'
+[08:09:44.545] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'basicErrorController' via factory method to bean named 'errorAttributes'
+[08:09:44.560] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration'
+[08:09:44.560] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
+[08:09:44.560] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+[08:09:44.560] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'spring.web-org.springframework.boot.autoconfigure.web.WebProperties'
+[08:09:44.560] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@5fd62371'
+[08:09:44.560] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter'
+[08:09:44.560] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'spring.web-org.springframework.boot.autoconfigure.web.WebProperties'
+[08:09:44.560] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+[08:09:44.560] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@5fd62371'
+[08:09:44.560] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'requestMappingHandlerAdapter'
+[08:09:44.576] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'mvcContentNegotiationManager'
+[08:09:44.584] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'mvcConversionService'
+[08:09:44.587] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'mvcValidator'
+[08:09:44.588] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcContentNegotiationManager'
+[08:09:44.588] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcConversionService'
+[08:09:44.588] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcValidator'
+[08:09:44.592] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcContentNegotiationManager'
+[08:09:44.592] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcConversionService'
+[08:09:44.592] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcValidator'
+[08:09:44.598] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'messageConverters'
+[08:09:44.598] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration'
+[08:09:44.598] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'stringHttpMessageConverter'
+[08:09:44.598] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration'
+[08:09:44.598] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'stringHttpMessageConverter' via factory method to bean named 'environment'
+[08:09:44.598] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'mappingJackson2HttpMessageConverter'
+[08:09:44.598] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration$MappingJackson2HttpMessageConverterConfiguration'
+[08:09:44.598] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jacksonObjectMapper'
+[08:09:44.598] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration'
+[08:09:44.598] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration'
+[08:09:44.598] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'standardJacksonObjectMapperBuilderCustomizer'
+[08:09:44.598] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration'
+[08:09:44.598] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties'
+[08:09:44.614] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'standardJacksonObjectMapperBuilderCustomizer' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1338fb5'
+[08:09:44.615] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'standardJacksonObjectMapperBuilderCustomizer' via factory method to bean named 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties'
+[08:09:44.616] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'jacksonObjectMapperBuilder' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1338fb5'
+[08:09:44.616] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'jacksonObjectMapperBuilder' via factory method to bean named 'standardJacksonObjectMapperBuilderCustomizer'
+[08:09:44.617] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'parameterNamesModule'
+[08:09:44.617] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration'
+[08:09:44.620] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'jsonComponentModule'
+[08:09:44.620] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration'
+[08:09:44.626] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'jacksonObjectMapper' via factory method to bean named 'jacksonObjectMapperBuilder'
+[08:09:44.643] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'mappingJackson2HttpMessageConverter' via factory method to bean named 'jacksonObjectMapper'
+[08:09:44.648] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'applicationTaskExecutor'
+[08:09:44.648] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'applicationTaskExecutor' via factory method to bean named 'taskExecutorBuilder'
+[08:09:44.648] DEBUG [main]o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[08:09:44.669] DEBUG [main]o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+[08:09:44.691] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'requestMappingHandlerMapping'
+[08:09:44.692] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'mvcResourceUrlProvider'
+[08:09:44.696] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
+[08:09:44.696] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcConversionService'
+[08:09:44.696] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+[08:09:44.697] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
+[08:09:44.697] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcConversionService'
+[08:09:44.697] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+[08:09:44.715] DEBUG [main]_.s.w.s.H.Mappings - 
+	c.i.s.Controller:
+	{GET [/acquire]}: acquire(Integer)
+	{GET [/tryAcquire]}: tryAcquire(Integer)
+	{GET [/nginx-conn]}: nginxConn(int)
+	{GET [/nginx]}: nginx()
+	{GET [/tryAcquireWithTimeout]}: tryAcquireWithTimeout(Integer,Integer)
+[08:09:44.730] DEBUG [main]_.s.w.s.H.Mappings - 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+[08:09:44.730] DEBUG [main]o.s.w.s.m.m.a.RequestMappingHandlerMapping - 7 mappings in 'requestMappingHandlerMapping'
+[08:09:44.730] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'welcomePageHandlerMapping'
+[08:09:44.730] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1338fb5'
+[08:09:44.730] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'mvcConversionService'
+[08:09:44.730] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+[08:09:44.730] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'localeResolver'
+[08:09:44.730] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'themeResolver'
+[08:09:44.730] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'flashMapManager'
+[08:09:44.730] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'mvcPatternParser'
+[08:09:44.730] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'mvcUrlPathHelper'
+[08:09:44.730] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'mvcPathMatcher'
+[08:09:44.730] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'viewControllerHandlerMapping'
+[08:09:44.730] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcConversionService'
+[08:09:44.730] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+[08:09:44.730] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'beanNameHandlerMapping'
+[08:09:44.730] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'beanNameHandlerMapping' via factory method to bean named 'mvcConversionService'
+[08:09:44.730] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'beanNameHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+[08:09:44.730] DEBUG [main]_.s.w.s.H.Mappings - 'beanNameHandlerMapping' {}
+[08:09:44.746] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'routerFunctionMapping'
+[08:09:44.746] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'routerFunctionMapping' via factory method to bean named 'mvcConversionService'
+[08:09:44.746] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'routerFunctionMapping' via factory method to bean named 'mvcResourceUrlProvider'
+[08:09:44.746] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'resourceHandlerMapping'
+[08:09:44.746] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
+[08:09:44.746] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcConversionService'
+[08:09:44.746] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+[08:09:44.746] DEBUG [main]_.s.w.s.H.Mappings - 'resourceHandlerMapping' {/webjars/**=ResourceHttpRequestHandler [Classpath [META-INF/resources/webjars/]], /**=ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]}
+[08:09:44.746] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'defaultServletHandlerMapping'
+[08:09:44.746] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'handlerFunctionAdapter'
+[08:09:44.746] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'mvcUriComponentsContributor'
+[08:09:44.746] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'mvcUriComponentsContributor' via factory method to bean named 'mvcConversionService'
+[08:09:44.746] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'mvcUriComponentsContributor' via factory method to bean named 'requestMappingHandlerAdapter'
+[08:09:44.762] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'httpRequestHandlerAdapter'
+[08:09:44.762] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'simpleControllerHandlerAdapter'
+[08:09:44.762] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'handlerExceptionResolver'
+[08:09:44.762] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'handlerExceptionResolver' via factory method to bean named 'mvcContentNegotiationManager'
+[08:09:44.762] DEBUG [main]o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+[08:09:44.762] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'mvcViewResolver'
+[08:09:44.762] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'mvcViewResolver' via factory method to bean named 'mvcContentNegotiationManager'
+[08:09:44.762] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'viewNameTranslator'
+[08:09:44.762] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'defaultViewResolver'
+[08:09:44.774] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'viewResolver'
+[08:09:44.775] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'viewResolver' via factory method to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@5fd62371'
+[08:09:44.777] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration'
+[08:09:44.777] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' via constructor to bean named 'environment'
+[08:09:44.777] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'mbeanExporter'
+[08:09:44.778] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'objectNamingStrategy'
+[08:09:44.779] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'mbeanExporter' via factory method to bean named 'objectNamingStrategy'
+[08:09:44.779] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'mbeanExporter' via factory method to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@5fd62371'
+[08:09:44.785] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'mbeanServer'
+[08:09:44.788] DEBUG [main]o.s.j.s.JmxUtils - Found MBeanServer: com.sun.jmx.mbeanserver.JmxMBeanServer@3ecf72fd
+[08:09:44.792] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.admin.SpringApplicationAdminJmxAutoConfiguration'
+[08:09:44.793] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'springApplicationAdminRegistrar'
+[08:09:44.793] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'springApplicationAdminRegistrar' via factory method to bean named 'environment'
+[08:09:44.795] DEBUG [main]o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application Admin MBean registered with name 'org.springframework.boot:type=Admin,name=SpringApplication'
+[08:09:44.795] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$ClassProxyingConfiguration'
+[08:09:44.795] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$ClassProxyingConfiguration' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@5fd62371'
+[08:09:44.802] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration'
+[08:09:44.802] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration'
+[08:09:44.802] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'applicationAvailability'
+[08:09:44.804] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration'
+[08:09:44.804] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.LifecycleAutoConfiguration'
+[08:09:44.804] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'lifecycleProcessor'
+[08:09:44.805] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.lifecycle-org.springframework.boot.autoconfigure.context.LifecycleProperties'
+[08:09:44.806] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'lifecycleProcessor' via factory method to bean named 'spring.lifecycle-org.springframework.boot.autoconfigure.context.LifecycleProperties'
+[08:09:44.806] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration'
+[08:09:44.807] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration'
+[08:09:44.809] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties'
+[08:09:44.810] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration' via constructor to bean named 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties'
+[08:09:44.810] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.task.TaskSchedulingAutoConfiguration'
+[08:09:44.811] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'scheduledBeanLazyInitializationExcludeFilter'
+[08:09:44.812] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'taskSchedulerBuilder'
+[08:09:44.813] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties'
+[08:09:44.814] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name 'taskSchedulerBuilder' via factory method to bean named 'spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties'
+[08:09:44.815] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration'
+[08:09:44.815] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration'
+[08:09:44.816] DEBUG [main]o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'multipartResolver'
+[08:09:44.823] DEBUG [main]o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[08:09:44.824] DEBUG [main]o.s.j.e.a.AnnotationMBeanExporter - Autodetecting user-defined JMX MBeans
+[08:09:44.829] DEBUG [main]o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase 2147483646
+[08:09:44.830] INFO  [main]o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-10086"]
+[08:09:44.850] INFO  [main]o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 10086 (http) with context path ''
+[08:09:44.852] DEBUG [main]o.s.c.s.DefaultLifecycleProcessor - Successfully started bean 'webServerStartStop'
+[08:09:44.852] DEBUG [main]o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase 2147483647
+[08:09:44.852] DEBUG [main]o.s.c.s.DefaultLifecycleProcessor - Successfully started bean 'webServerGracefulShutdown'
+[08:09:44.868] DEBUG [main]o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+
+============================
+CONDITIONS EVALUATION REPORT
+============================
+
+
+Positive matches:
+-----------------
+
+   AopAutoConfiguration matched:
+      - @ConditionalOnProperty (spring.aop.auto=true) matched (OnPropertyCondition)
+
+   AopAutoConfiguration.ClassProxyingConfiguration matched:
+      - @ConditionalOnMissingClass did not find unwanted class 'org.aspectj.weaver.Advice' (OnClassCondition)
+      - @ConditionalOnProperty (spring.aop.proxy-target-class=true) matched (OnPropertyCondition)
+
+   DispatcherServletAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.web.servlet.DispatcherServlet' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+
+   DispatcherServletAutoConfiguration.DispatcherServletConfiguration matched:
+      - @ConditionalOnClass found required class 'javax.servlet.ServletRegistration' (OnClassCondition)
+      - Default DispatcherServlet did not find dispatcher servlet beans (DispatcherServletAutoConfiguration.DefaultDispatcherServletCondition)
+
+   DispatcherServletAutoConfiguration.DispatcherServletRegistrationConfiguration matched:
+      - @ConditionalOnClass found required class 'javax.servlet.ServletRegistration' (OnClassCondition)
+      - DispatcherServlet Registration did not find servlet registration bean (DispatcherServletAutoConfiguration.DispatcherServletRegistrationCondition)
+
+   DispatcherServletAutoConfiguration.DispatcherServletRegistrationConfiguration#dispatcherServletRegistration matched:
+      - @ConditionalOnBean (names: dispatcherServlet types: org.springframework.web.servlet.DispatcherServlet; SearchStrategy: all) found bean 'dispatcherServlet' (OnBeanCondition)
+
+   EmbeddedWebServerFactoryCustomizerAutoConfiguration matched:
+      - @ConditionalOnWebApplication (required) found 'session' scope (OnWebApplicationCondition)
+
+   EmbeddedWebServerFactoryCustomizerAutoConfiguration.TomcatWebServerFactoryCustomizerConfiguration matched:
+      - @ConditionalOnClass found required classes 'org.apache.catalina.startup.Tomcat', 'org.apache.coyote.UpgradeProtocol' (OnClassCondition)
+
+   ErrorMvcAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+
+   ErrorMvcAutoConfiguration#basicErrorController matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.web.servlet.error.ErrorController; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration#errorAttributes matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.web.servlet.error.ErrorAttributes; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration.DefaultErrorViewResolverConfiguration#conventionErrorViewResolver matched:
+      - @ConditionalOnBean (types: org.springframework.web.servlet.DispatcherServlet; SearchStrategy: all) found bean 'dispatcherServlet'; @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.servlet.error.ErrorViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration matched:
+      - @ConditionalOnProperty (server.error.whitelabel.enabled) matched (OnPropertyCondition)
+      - ErrorTemplate Missing did not find error template view (ErrorMvcAutoConfiguration.ErrorTemplateMissingCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#beanNameViewResolver matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#defaultErrorView matched:
+      - @ConditionalOnMissingBean (names: error; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   GenericCacheConfiguration matched:
+      - Cache org.springframework.boot.autoconfigure.cache.GenericCacheConfiguration automatic cache type (CacheCondition)
+
+   HttpEncodingAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.web.filter.CharacterEncodingFilter' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnProperty (server.servlet.encoding.enabled) matched (OnPropertyCondition)
+
+   HttpEncodingAutoConfiguration#characterEncodingFilter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.filter.CharacterEncodingFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   HttpMessageConvertersAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.HttpMessageConverter' (OnClassCondition)
+      - NoneNestedConditions 0 matched 1 did not; NestedCondition on HttpMessageConvertersAutoConfiguration.NotReactiveWebApplicationCondition.ReactiveWebApplication did not find reactive web application classes (HttpMessageConvertersAutoConfiguration.NotReactiveWebApplicationCondition)
+
+   HttpMessageConvertersAutoConfiguration#messageConverters matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.http.HttpMessageConverters; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   HttpMessageConvertersAutoConfiguration.StringHttpMessageConverterConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.StringHttpMessageConverter' (OnClassCondition)
+
+   HttpMessageConvertersAutoConfiguration.StringHttpMessageConverterConfiguration#stringHttpMessageConverter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.StringHttpMessageConverter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'com.fasterxml.jackson.databind.ObjectMapper' (OnClassCondition)
+
+   JacksonAutoConfiguration.Jackson2ObjectMapperBuilderCustomizerConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.json.Jackson2ObjectMapperBuilder' (OnClassCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperBuilderConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.json.Jackson2ObjectMapperBuilder' (OnClassCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperBuilderConfiguration#jacksonObjectMapperBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.json.Jackson2ObjectMapperBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.json.Jackson2ObjectMapperBuilder' (OnClassCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperConfiguration#jacksonObjectMapper matched:
+      - @ConditionalOnMissingBean (types: com.fasterxml.jackson.databind.ObjectMapper; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration.ParameterNamesModuleConfiguration matched:
+      - @ConditionalOnClass found required class 'com.fasterxml.jackson.module.paramnames.ParameterNamesModule' (OnClassCondition)
+
+   JacksonAutoConfiguration.ParameterNamesModuleConfiguration#parameterNamesModule matched:
+      - @ConditionalOnMissingBean (types: com.fasterxml.jackson.module.paramnames.ParameterNamesModule; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonHttpMessageConvertersConfiguration.MappingJackson2HttpMessageConverterConfiguration matched:
+      - @ConditionalOnClass found required class 'com.fasterxml.jackson.databind.ObjectMapper' (OnClassCondition)
+      - @ConditionalOnProperty (spring.mvc.converters.preferred-json-mapper=jackson) matched (OnPropertyCondition)
+      - @ConditionalOnBean (types: com.fasterxml.jackson.databind.ObjectMapper; SearchStrategy: all) found bean 'jacksonObjectMapper' (OnBeanCondition)
+
+   JacksonHttpMessageConvertersConfiguration.MappingJackson2HttpMessageConverterConfiguration#mappingJackson2HttpMessageConverter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.json.MappingJackson2HttpMessageConverter ignored: org.springframework.hateoas.server.mvc.TypeConstrainedMappingJackson2HttpMessageConverter,org.springframework.data.rest.webmvc.alps.AlpsJsonHttpMessageConverter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JmxAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.jmx.export.MBeanExporter' (OnClassCondition)
+      - @ConditionalOnProperty (spring.jmx.enabled=true) matched (OnPropertyCondition)
+
+   JmxAutoConfiguration#mbeanExporter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.jmx.export.MBeanExporter; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   JmxAutoConfiguration#mbeanServer matched:
+      - @ConditionalOnMissingBean (types: javax.management.MBeanServer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JmxAutoConfiguration#objectNamingStrategy matched:
+      - @ConditionalOnMissingBean (types: org.springframework.jmx.export.naming.ObjectNamingStrategy; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   LifecycleAutoConfiguration#defaultLifecycleProcessor matched:
+      - @ConditionalOnMissingBean (names: lifecycleProcessor; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   MultipartAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.servlet.Servlet', 'org.springframework.web.multipart.support.StandardServletMultipartResolver', 'javax.servlet.MultipartConfigElement' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnProperty (spring.servlet.multipart.enabled) matched (OnPropertyCondition)
+
+   MultipartAutoConfiguration#multipartConfigElement matched:
+      - @ConditionalOnMissingBean (types: javax.servlet.MultipartConfigElement,org.springframework.web.multipart.commons.CommonsMultipartResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   MultipartAutoConfiguration#multipartResolver matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.multipart.MultipartResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   NoOpCacheConfiguration matched:
+      - Cache org.springframework.boot.autoconfigure.cache.NoOpCacheConfiguration automatic cache type (CacheCondition)
+
+   PropertyPlaceholderAutoConfiguration#propertySourcesPlaceholderConfigurer matched:
+      - @ConditionalOnMissingBean (types: org.springframework.context.support.PropertySourcesPlaceholderConfigurer; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   RestTemplateAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.web.client.RestTemplate' (OnClassCondition)
+      - NoneNestedConditions 0 matched 1 did not; NestedCondition on RestTemplateAutoConfiguration.NotReactiveWebApplicationCondition.ReactiveWebApplication did not find reactive web application classes (RestTemplateAutoConfiguration.NotReactiveWebApplicationCondition)
+
+   RestTemplateAutoConfiguration#restTemplateBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.web.client.RestTemplateBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   RestTemplateAutoConfiguration#restTemplateBuilderConfigurer matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.client.RestTemplateBuilderConfigurer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ServletWebServerFactoryAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'javax.servlet.ServletRequest' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+
+   ServletWebServerFactoryAutoConfiguration#tomcatServletWebServerFactoryCustomizer matched:
+      - @ConditionalOnClass found required class 'org.apache.catalina.startup.Tomcat' (OnClassCondition)
+
+   ServletWebServerFactoryConfiguration.EmbeddedTomcat matched:
+      - @ConditionalOnClass found required classes 'javax.servlet.Servlet', 'org.apache.catalina.startup.Tomcat', 'org.apache.coyote.UpgradeProtocol' (OnClassCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.boot.web.servlet.server.ServletWebServerFactory; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   SimpleCacheConfiguration matched:
+      - Cache org.springframework.boot.autoconfigure.cache.SimpleCacheConfiguration automatic cache type (CacheCondition)
+
+   SpringApplicationAdminJmxAutoConfiguration matched:
+      - @ConditionalOnProperty (spring.application.admin.enabled=true) matched (OnPropertyCondition)
+
+   SpringApplicationAdminJmxAutoConfiguration#springApplicationAdminRegistrar matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TaskExecutionAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor' (OnClassCondition)
+
+   TaskExecutionAutoConfiguration#applicationTaskExecutor matched:
+      - @ConditionalOnMissingBean (types: java.util.concurrent.Executor; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TaskExecutionAutoConfiguration#taskExecutorBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.task.TaskExecutorBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TaskSchedulingAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler' (OnClassCondition)
+
+   TaskSchedulingAutoConfiguration#taskSchedulerBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.task.TaskSchedulerBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet', 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration#formContentFilter matched:
+      - @ConditionalOnProperty (spring.mvc.formcontent.filter.enabled) matched (OnPropertyCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.web.filter.FormContentFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.EnableWebMvcConfiguration#flashMapManager matched:
+      - @ConditionalOnMissingBean (names: flashMapManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.EnableWebMvcConfiguration#localeResolver matched:
+      - @ConditionalOnMissingBean (names: localeResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.EnableWebMvcConfiguration#themeResolver matched:
+      - @ConditionalOnMissingBean (names: themeResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#defaultViewResolver matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.InternalResourceViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#requestContextFilter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.context.request.RequestContextListener,org.springframework.web.filter.RequestContextFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#viewResolver matched:
+      - @ConditionalOnBean (types: org.springframework.web.servlet.ViewResolver; SearchStrategy: all) found beans 'defaultViewResolver', 'beanNameViewResolver', 'mvcViewResolver'; @ConditionalOnMissingBean (names: viewResolver types: org.springframework.web.servlet.view.ContentNegotiatingViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebSocketServletAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.servlet.Servlet', 'javax.websocket.server.ServerContainer' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+
+   WebSocketServletAutoConfiguration.TomcatWebSocketConfiguration matched:
+      - @ConditionalOnClass found required classes 'org.apache.catalina.startup.Tomcat', 'org.apache.tomcat.websocket.server.WsSci' (OnClassCondition)
+
+   WebSocketServletAutoConfiguration.TomcatWebSocketConfiguration#websocketServletWebServerCustomizer matched:
+      - @ConditionalOnMissingBean (names: websocketServletWebServerCustomizer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   ActiveMQAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.jms.ConnectionFactory' (OnClassCondition)
+
+   AopAutoConfiguration.AspectJAutoProxyingConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.aspectj.weaver.Advice' (OnClassCondition)
+
+   ArtemisAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.jms.ConnectionFactory' (OnClassCondition)
+
+   BatchAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.batch.core.launch.JobLauncher' (OnClassCondition)
+
+   CacheAutoConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.cache.interceptor.CacheAspectSupport; SearchStrategy: all) did not find any beans of type org.springframework.cache.interceptor.CacheAspectSupport (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.cache.CacheManager' (OnClassCondition)
+
+   CacheAutoConfiguration.CacheManagerEntityManagerFactoryDependsOnPostProcessor:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean' (OnClassCondition)
+         - Ancestor org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration did not match (ConditionEvaluationReport.AncestorsMatchedCondition)
+
+   CaffeineCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.github.benmanes.caffeine.cache.Caffeine' (OnClassCondition)
+
+   CassandraAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.datastax.oss.driver.api.core.CqlSession' (OnClassCondition)
+
+   CassandraDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.datastax.oss.driver.api.core.CqlSession' (OnClassCondition)
+
+   CassandraReactiveDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.datastax.oss.driver.api.core.CqlSession' (OnClassCondition)
+
+   CassandraReactiveRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.cassandra.ReactiveSession' (OnClassCondition)
+
+   CassandraRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.datastax.oss.driver.api.core.CqlSession' (OnClassCondition)
+
+   ClientHttpConnectorAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.web.reactive.function.client.WebClient' (OnClassCondition)
+
+   CodecsAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.web.reactive.function.client.WebClient' (OnClassCondition)
+
+   CouchbaseAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.couchbase.client.java.Cluster' (OnClassCondition)
+
+   CouchbaseCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.couchbase.client.java.Cluster' (OnClassCondition)
+
+   CouchbaseDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.couchbase.client.java.Bucket' (OnClassCondition)
+
+   CouchbaseReactiveDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.couchbase.client.java.Cluster' (OnClassCondition)
+
+   CouchbaseReactiveRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.couchbase.client.java.Cluster' (OnClassCondition)
+
+   CouchbaseRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.couchbase.client.java.Bucket' (OnClassCondition)
+
+   DataSourceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType' (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.jdbc.core.JdbcTemplate' (OnClassCondition)
+
+   DispatcherServletAutoConfiguration.DispatcherServletConfiguration#multipartResolver:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.web.multipart.MultipartResolver; SearchStrategy: all) did not find any beans of type org.springframework.web.multipart.MultipartResolver (OnBeanCondition)
+
+   EhCacheCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'net.sf.ehcache.Cache' (OnClassCondition)
+
+   ElasticsearchDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate' (OnClassCondition)
+
+   ElasticsearchRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.elasticsearch.client.Client' (OnClassCondition)
+
+   ElasticsearchRestClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.elasticsearch.client.RestHighLevelClient' (OnClassCondition)
+
+   EmbeddedLdapAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.unboundid.ldap.listener.InMemoryDirectoryServer' (OnClassCondition)
+
+   EmbeddedMongoAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.mongodb.MongoClientSettings' (OnClassCondition)
+
+   EmbeddedWebServerFactoryCustomizerAutoConfiguration.JettyWebServerFactoryCustomizerConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'org.eclipse.jetty.server.Server', 'org.eclipse.jetty.util.Loader', 'org.eclipse.jetty.webapp.WebAppContext' (OnClassCondition)
+
+   EmbeddedWebServerFactoryCustomizerAutoConfiguration.NettyWebServerFactoryCustomizerConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'reactor.netty.http.server.HttpServer' (OnClassCondition)
+
+   EmbeddedWebServerFactoryCustomizerAutoConfiguration.UndertowWebServerFactoryCustomizerConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'io.undertow.Undertow', 'org.xnio.SslClientAuthMode' (OnClassCondition)
+
+   ErrorWebFluxAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.web.reactive.config.WebFluxConfigurer' (OnClassCondition)
+
+   FlywayAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.flywaydb.core.Flyway' (OnClassCondition)
+
+   FreeMarkerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'freemarker.template.Configuration' (OnClassCondition)
+
+   GroovyTemplateAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'groovy.text.markup.MarkupTemplateEngine' (OnClassCondition)
+
+   GsonAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.google.gson.Gson' (OnClassCondition)
+
+   GsonHttpMessageConvertersConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.google.gson.Gson' (OnClassCondition)
+
+   H2ConsoleAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.h2.server.web.WebServlet' (OnClassCondition)
+
+   HazelcastAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.hazelcast.core.HazelcastInstance' (OnClassCondition)
+
+   HazelcastCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.hazelcast.core.HazelcastInstance' (OnClassCondition)
+
+   HazelcastJpaDependencyAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.hazelcast.core.HazelcastInstance' (OnClassCondition)
+
+   HibernateJpaAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.persistence.EntityManager' (OnClassCondition)
+
+   HttpHandlerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.web.reactive.DispatcherHandler' (OnClassCondition)
+
+   HypermediaAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.hateoas.EntityModel' (OnClassCondition)
+
+   InfinispanCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.infinispan.spring.embedded.provider.SpringEmbeddedCacheManager' (OnClassCondition)
+
+   InfluxDbAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.influxdb.InfluxDB' (OnClassCondition)
+
+   IntegrationAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.integration.config.EnableIntegration' (OnClassCondition)
+
+   JCacheCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.cache.Caching' (OnClassCondition)
+
+   JacksonHttpMessageConvertersConfiguration.MappingJackson2XmlHttpMessageConverterConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.fasterxml.jackson.dataformat.xml.XmlMapper' (OnClassCondition)
+
+   JdbcRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration' (OnClassCondition)
+
+   JdbcTemplateAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.jdbc.core.JdbcTemplate' (OnClassCondition)
+
+   JerseyAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.glassfish.jersey.server.spring.SpringComponentProvider' (OnClassCondition)
+
+   JmsAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.jms.Message' (OnClassCondition)
+
+   JndiConnectionFactoryAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.jms.core.JmsTemplate' (OnClassCondition)
+
+   JndiDataSourceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType' (OnClassCondition)
+
+   JooqAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.jooq.DSLContext' (OnClassCondition)
+
+   JpaRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.jpa.repository.JpaRepository' (OnClassCondition)
+
+   JsonbAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.json.bind.Jsonb' (OnClassCondition)
+
+   JsonbHttpMessageConvertersConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.json.bind.Jsonb' (OnClassCondition)
+
+   JtaAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.transaction.Transaction' (OnClassCondition)
+
+   KafkaAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.kafka.core.KafkaTemplate' (OnClassCondition)
+
+   LdapAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.ldap.core.ContextSource' (OnClassCondition)
+
+   LdapRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.ldap.repository.LdapRepository' (OnClassCondition)
+
+   LiquibaseAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'liquibase.change.DatabaseChange' (OnClassCondition)
+
+   MailSenderAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.mail.internet.MimeMessage' (OnClassCondition)
+
+   MailSenderValidatorAutoConfiguration:
+      Did not match:
+         - @ConditionalOnSingleCandidate did not find required type 'org.springframework.mail.javamail.JavaMailSenderImpl' (OnBeanCondition)
+
+   MessageSourceAutoConfiguration:
+      Did not match:
+         - ResourceBundle did not find bundle with basename messages (MessageSourceAutoConfiguration.ResourceBundleCondition)
+
+   MongoAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.mongodb.client.MongoClient' (OnClassCondition)
+
+   MongoDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.mongodb.client.MongoClient' (OnClassCondition)
+
+   MongoReactiveAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.mongodb.reactivestreams.client.MongoClient' (OnClassCondition)
+
+   MongoReactiveDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.mongodb.reactivestreams.client.MongoClient' (OnClassCondition)
+
+   MongoReactiveRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.mongodb.reactivestreams.client.MongoClient' (OnClassCondition)
+
+   MongoRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.mongodb.client.MongoClient' (OnClassCondition)
+
+   MustacheAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.samskivert.mustache.Mustache' (OnClassCondition)
+
+   Neo4jAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.neo4j.driver.Driver' (OnClassCondition)
+
+   Neo4jDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.neo4j.driver.Driver' (OnClassCondition)
+
+   Neo4jReactiveDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.neo4j.driver.Driver' (OnClassCondition)
+
+   Neo4jReactiveRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.neo4j.driver.Driver' (OnClassCondition)
+
+   Neo4jRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.neo4j.driver.Driver' (OnClassCondition)
+
+   OAuth2ClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+
+   OAuth2ResourceServerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.oauth2.server.resource.BearerTokenAuthenticationToken' (OnClassCondition)
+
+   PersistenceExceptionTranslationAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor' (OnClassCondition)
+
+   ProjectInfoAutoConfiguration#buildProperties:
+      Did not match:
+         - @ConditionalOnResource did not find resource '${spring.info.build.location:classpath:META-INF/build-info.properties}' (OnResourceCondition)
+
+   ProjectInfoAutoConfiguration#gitProperties:
+      Did not match:
+         - GitResource did not find git info at classpath:git.properties (ProjectInfoAutoConfiguration.GitResourceAvailableCondition)
+
+   QuartzAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.quartz.Scheduler' (OnClassCondition)
+
+   R2dbcAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'io.r2dbc.spi.ConnectionFactory' (OnClassCondition)
+
+   R2dbcDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.r2dbc.core.R2dbcEntityTemplate' (OnClassCondition)
+
+   R2dbcRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'io.r2dbc.spi.ConnectionFactory' (OnClassCondition)
+
+   R2dbcTransactionManagerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.r2dbc.connection.R2dbcTransactionManager' (OnClassCondition)
+
+   RSocketMessagingAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'io.rsocket.RSocket' (OnClassCondition)
+
+   RSocketRequesterAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'io.rsocket.RSocket' (OnClassCondition)
+
+   RSocketSecurityAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.rsocket.core.SecuritySocketAcceptorInterceptor' (OnClassCondition)
+
+   RSocketServerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'io.rsocket.core.RSocketServer' (OnClassCondition)
+
+   RSocketStrategiesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'io.netty.buffer.PooledByteBufAllocator' (OnClassCondition)
+
+   RabbitAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.rabbitmq.client.Channel' (OnClassCondition)
+
+   ReactiveElasticsearchRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.elasticsearch.client.reactive.ReactiveElasticsearchClient' (OnClassCondition)
+
+   ReactiveElasticsearchRestClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'reactor.netty.http.client.HttpClient' (OnClassCondition)
+
+   ReactiveOAuth2ClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'reactor.core.publisher.Flux' (OnClassCondition)
+
+   ReactiveOAuth2ResourceServerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity' (OnClassCondition)
+
+   ReactiveSecurityAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'reactor.core.publisher.Flux' (OnClassCondition)
+
+   ReactiveUserDetailsServiceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.authentication.ReactiveAuthenticationManager' (OnClassCondition)
+
+   ReactiveWebServerFactoryAutoConfiguration:
+      Did not match:
+         - @ConditionalOnWebApplication did not find reactive web application classes (OnWebApplicationCondition)
+
+   RedisAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.redis.core.RedisOperations' (OnClassCondition)
+
+   RedisCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.redis.connection.RedisConnectionFactory' (OnClassCondition)
+
+   RedisReactiveAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'reactor.core.publisher.Flux' (OnClassCondition)
+
+   RedisRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.redis.repository.configuration.EnableRedisRepositories' (OnClassCondition)
+
+   RepositoryRestMvcAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration' (OnClassCondition)
+
+   Saml2RelyingPartyAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (OnClassCondition)
+
+   SecurityAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.authentication.DefaultAuthenticationEventPublisher' (OnClassCondition)
+
+   SecurityFilterAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.config.http.SessionCreationPolicy' (OnClassCondition)
+
+   SendGridAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.sendgrid.SendGrid' (OnClassCondition)
+
+   ServletWebServerFactoryAutoConfiguration#forwardedHeaderFilter:
+      Did not match:
+         - @ConditionalOnProperty (server.forward-headers-strategy=framework) did not find property 'server.forward-headers-strategy' (OnPropertyCondition)
+
+   ServletWebServerFactoryConfiguration.EmbeddedJetty:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'org.eclipse.jetty.server.Server', 'org.eclipse.jetty.util.Loader', 'org.eclipse.jetty.webapp.WebAppContext' (OnClassCondition)
+
+   ServletWebServerFactoryConfiguration.EmbeddedUndertow:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'io.undertow.Undertow', 'org.xnio.SslClientAuthMode' (OnClassCondition)
+
+   SessionAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.session.Session' (OnClassCondition)
+
+   SolrAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.solr.client.solrj.impl.CloudSolrClient' (OnClassCondition)
+
+   SolrRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.solr.client.solrj.SolrClient' (OnClassCondition)
+
+   SpringDataWebAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.web.PageableHandlerMethodArgumentResolver' (OnClassCondition)
+
+   TaskSchedulingAutoConfiguration#taskScheduler:
+      Did not match:
+         - @ConditionalOnBean (names: org.springframework.context.annotation.internalScheduledAnnotationProcessor; SearchStrategy: all) did not find any beans named org.springframework.context.annotation.internalScheduledAnnotationProcessor (OnBeanCondition)
+
+   ThymeleafAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.thymeleaf.spring5.SpringTemplateEngine' (OnClassCondition)
+
+   TransactionAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.transaction.PlatformTransactionManager' (OnClassCondition)
+
+   UserDetailsServiceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+
+   ValidationAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.validation.executable.ExecutableValidator' (OnClassCondition)
+
+   WebClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.web.reactive.function.client.WebClient' (OnClassCondition)
+
+   WebFluxAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.web.reactive.config.WebFluxConfigurer' (OnClassCondition)
+
+   WebMvcAutoConfiguration#hiddenHttpMethodFilter:
+      Did not match:
+         - @ConditionalOnProperty (spring.mvc.hiddenmethod.filter.enabled) did not find property 'enabled' (OnPropertyCondition)
+
+   WebMvcAutoConfiguration.ResourceChainCustomizerConfiguration:
+      Did not match:
+         - @ConditionalOnEnabledResourceChain did not find class org.webjars.WebJarAssetLocator (OnEnabledResourceChainCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#beanNameViewResolver:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) found beans of type 'org.springframework.web.servlet.view.BeanNameViewResolver' beanNameViewResolver (OnBeanCondition)
+
+   WebServiceTemplateAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.oxm.Marshaller' (OnClassCondition)
+
+   WebServicesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.ws.transport.http.MessageDispatcherServlet' (OnClassCondition)
+
+   WebSocketMessagingAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer' (OnClassCondition)
+
+   WebSocketReactiveAutoConfiguration:
+      Did not match:
+         - @ConditionalOnWebApplication did not find reactive web application classes (OnWebApplicationCondition)
+
+   WebSocketServletAutoConfiguration.JettyWebSocketConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.eclipse.jetty.websocket.jsr356.server.deploy.WebSocketServerContainerInitializer' (OnClassCondition)
+
+   WebSocketServletAutoConfiguration.UndertowWebSocketConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'io.undertow.websockets.jsr.Bootstrap' (OnClassCondition)
+
+   XADataSourceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.transaction.TransactionManager' (OnClassCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration
+
+    org.springframework.boot.autoconfigure.context.LifecycleAutoConfiguration
+
+    org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration
+
+    org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+
+    org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration
+
+
+
+[08:09:44.870] DEBUG [main]o.s.c.e.PropertySourcesPropertyResolver - Found key 'spring.liveBeansView.mbeanDomain' in PropertySource 'systemProperties' with value of type String
+[08:09:44.873] INFO  [main]c.i.s.RateLimiterApplication - Started RateLimiterApplication in 2.012 seconds (JVM running for 4.088)
+[08:10:13.616] INFO  [http-nio-10086-exec-1]o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[08:10:13.616] INFO  [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[08:10:13.616] DEBUG [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - Detected StandardServletMultipartResolver
+[08:10:13.616] DEBUG [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+[08:10:13.616] DEBUG [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - Detected FixedThemeResolver
+[08:10:13.617] DEBUG [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@cf79b6
+[08:10:13.617] DEBUG [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@723d09e
+[08:10:13.617] DEBUG [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+[08:10:13.617] INFO  [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - Completed initialization in 1 ms
+[08:10:13.626] DEBUG [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[08:10:13.631] DEBUG [http-nio-10086-exec-1]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[08:10:13.639] INFO  [http-nio-10086-exec-1]c.i.s.Controller - Nginx success
+[08:10:13.658] DEBUG [http-nio-10086-exec-1]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[08:10:13.659] DEBUG [http-nio-10086-exec-1]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[08:10:13.668] DEBUG [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - Completed 200 OK
+[08:10:16.836] DEBUG [http-nio-10086-exec-2]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[08:10:16.836] DEBUG [http-nio-10086-exec-2]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[08:10:16.836] INFO  [http-nio-10086-exec-2]c.i.s.Controller - Nginx success
+[08:10:16.837] DEBUG [http-nio-10086-exec-2]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[08:10:16.837] DEBUG [http-nio-10086-exec-2]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[08:10:16.837] DEBUG [http-nio-10086-exec-2]o.s.w.s.DispatcherServlet - Completed 200 OK
+[08:10:17.200] DEBUG [http-nio-10086-exec-3]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[08:10:17.200] DEBUG [http-nio-10086-exec-3]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[08:10:17.200] INFO  [http-nio-10086-exec-3]c.i.s.Controller - Nginx success
+[08:10:17.201] DEBUG [http-nio-10086-exec-3]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[08:10:17.202] DEBUG [http-nio-10086-exec-3]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[08:10:17.202] DEBUG [http-nio-10086-exec-3]o.s.w.s.DispatcherServlet - Completed 200 OK
+[08:10:17.384] DEBUG [http-nio-10086-exec-4]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[08:10:17.384] DEBUG [http-nio-10086-exec-4]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[08:10:17.384] INFO  [http-nio-10086-exec-4]c.i.s.Controller - Nginx success
+[08:10:17.388] DEBUG [http-nio-10086-exec-4]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[08:10:17.388] DEBUG [http-nio-10086-exec-4]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[08:10:17.388] DEBUG [http-nio-10086-exec-4]o.s.w.s.DispatcherServlet - Completed 200 OK
+[08:10:17.571] DEBUG [http-nio-10086-exec-5]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[08:10:17.572] DEBUG [http-nio-10086-exec-5]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[08:10:17.572] INFO  [http-nio-10086-exec-5]c.i.s.Controller - Nginx success
+[08:10:17.572] DEBUG [http-nio-10086-exec-5]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[08:10:17.572] DEBUG [http-nio-10086-exec-5]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[08:10:17.573] DEBUG [http-nio-10086-exec-5]o.s.w.s.DispatcherServlet - Completed 200 OK
+[08:36:54.391] DEBUG [http-nio-10086-exec-6]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[08:36:54.392] DEBUG [http-nio-10086-exec-6]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[08:36:54.392] INFO  [http-nio-10086-exec-6]c.i.s.Controller - Nginx success
+[08:36:54.393] DEBUG [http-nio-10086-exec-6]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[08:36:54.393] DEBUG [http-nio-10086-exec-6]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[08:36:54.394] DEBUG [http-nio-10086-exec-6]o.s.w.s.DispatcherServlet - Completed 200 OK
+[08:36:55.034] DEBUG [http-nio-10086-exec-7]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[08:36:55.034] DEBUG [http-nio-10086-exec-7]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[08:36:55.035] INFO  [http-nio-10086-exec-7]c.i.s.Controller - Nginx success
+[08:36:55.035] DEBUG [http-nio-10086-exec-7]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[08:36:55.035] DEBUG [http-nio-10086-exec-7]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[08:36:55.036] DEBUG [http-nio-10086-exec-7]o.s.w.s.DispatcherServlet - Completed 200 OK
+[08:37:01.726] DEBUG [http-nio-10086-exec-8]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[08:37:01.727] DEBUG [http-nio-10086-exec-8]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[08:37:01.727] INFO  [http-nio-10086-exec-8]c.i.s.Controller - Nginx success
+[08:37:01.727] DEBUG [http-nio-10086-exec-8]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[08:37:01.727] DEBUG [http-nio-10086-exec-8]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[08:37:01.728] DEBUG [http-nio-10086-exec-8]o.s.w.s.DispatcherServlet - Completed 200 OK
+[08:37:01.919] DEBUG [http-nio-10086-exec-9]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[08:37:01.919] DEBUG [http-nio-10086-exec-9]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[08:37:01.919] INFO  [http-nio-10086-exec-9]c.i.s.Controller - Nginx success
+[08:37:01.919] DEBUG [http-nio-10086-exec-9]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[08:37:01.919] DEBUG [http-nio-10086-exec-9]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[08:37:01.920] DEBUG [http-nio-10086-exec-9]o.s.w.s.DispatcherServlet - Completed 200 OK
+[08:37:02.118] DEBUG [http-nio-10086-exec-10]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[08:37:02.118] DEBUG [http-nio-10086-exec-10]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[08:37:02.119] INFO  [http-nio-10086-exec-10]c.i.s.Controller - Nginx success
+[08:37:02.119] DEBUG [http-nio-10086-exec-10]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[08:37:02.119] DEBUG [http-nio-10086-exec-10]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[08:37:02.120] DEBUG [http-nio-10086-exec-10]o.s.w.s.DispatcherServlet - Completed 200 OK
+[08:37:02.287] DEBUG [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[08:37:02.287] DEBUG [http-nio-10086-exec-1]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[08:37:02.288] INFO  [http-nio-10086-exec-1]c.i.s.Controller - Nginx success
+[08:37:02.288] DEBUG [http-nio-10086-exec-1]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[08:37:02.288] DEBUG [http-nio-10086-exec-1]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[08:37:02.288] DEBUG [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - Completed 200 OK
+[08:37:02.473] DEBUG [http-nio-10086-exec-2]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[08:37:02.474] DEBUG [http-nio-10086-exec-2]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[08:37:02.474] INFO  [http-nio-10086-exec-2]c.i.s.Controller - Nginx success
+[08:37:02.474] DEBUG [http-nio-10086-exec-2]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[08:37:02.474] DEBUG [http-nio-10086-exec-2]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[08:37:02.474] DEBUG [http-nio-10086-exec-2]o.s.w.s.DispatcherServlet - Completed 200 OK
+[09:24:33.105] DEBUG [http-nio-10086-exec-3]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[09:24:33.105] DEBUG [http-nio-10086-exec-3]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[09:24:33.105] INFO  [http-nio-10086-exec-3]c.i.s.Controller - Nginx success
+[09:24:33.106] DEBUG [http-nio-10086-exec-3]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[09:24:33.106] DEBUG [http-nio-10086-exec-3]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[09:24:33.107] DEBUG [http-nio-10086-exec-3]o.s.w.s.DispatcherServlet - Completed 200 OK
+[09:24:34.462] DEBUG [http-nio-10086-exec-4]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[09:24:34.462] DEBUG [http-nio-10086-exec-4]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[09:24:34.462] INFO  [http-nio-10086-exec-4]c.i.s.Controller - Nginx success
+[09:24:34.464] DEBUG [http-nio-10086-exec-4]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[09:24:34.464] DEBUG [http-nio-10086-exec-4]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[09:24:34.466] DEBUG [http-nio-10086-exec-4]o.s.w.s.DispatcherServlet - Completed 200 OK
+[09:24:39.167] DEBUG [http-nio-10086-exec-5]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[09:24:39.167] DEBUG [http-nio-10086-exec-5]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[09:24:39.167] INFO  [http-nio-10086-exec-5]c.i.s.Controller - Nginx success
+[09:24:39.168] DEBUG [http-nio-10086-exec-5]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[09:24:39.168] DEBUG [http-nio-10086-exec-5]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[09:24:39.170] DEBUG [http-nio-10086-exec-5]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:17:49.455] DEBUG [http-nio-10086-exec-6]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:17:49.455] DEBUG [http-nio-10086-exec-6]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:17:49.457] INFO  [http-nio-10086-exec-6]c.i.s.Controller - Nginx success
+[14:17:49.458] DEBUG [http-nio-10086-exec-6]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:17:49.458] DEBUG [http-nio-10086-exec-6]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:17:49.459] DEBUG [http-nio-10086-exec-6]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:17:50.044] DEBUG [http-nio-10086-exec-7]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:17:50.044] DEBUG [http-nio-10086-exec-7]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:17:50.044] INFO  [http-nio-10086-exec-7]c.i.s.Controller - Nginx success
+[14:17:50.045] DEBUG [http-nio-10086-exec-7]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:17:50.045] DEBUG [http-nio-10086-exec-7]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:17:50.045] DEBUG [http-nio-10086-exec-7]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:17:50.245] DEBUG [http-nio-10086-exec-8]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:17:50.245] DEBUG [http-nio-10086-exec-8]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:17:50.245] INFO  [http-nio-10086-exec-8]c.i.s.Controller - Nginx success
+[14:17:50.245] DEBUG [http-nio-10086-exec-8]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:17:50.245] DEBUG [http-nio-10086-exec-8]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:17:50.246] DEBUG [http-nio-10086-exec-8]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:17:50.450] DEBUG [http-nio-10086-exec-9]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:17:50.451] DEBUG [http-nio-10086-exec-9]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:17:50.451] INFO  [http-nio-10086-exec-9]c.i.s.Controller - Nginx success
+[14:17:50.451] DEBUG [http-nio-10086-exec-9]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:17:50.451] DEBUG [http-nio-10086-exec-9]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:17:50.452] DEBUG [http-nio-10086-exec-9]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:17:50.653] DEBUG [http-nio-10086-exec-10]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:17:50.653] DEBUG [http-nio-10086-exec-10]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:17:50.653] INFO  [http-nio-10086-exec-10]c.i.s.Controller - Nginx success
+[14:17:50.653] DEBUG [http-nio-10086-exec-10]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:17:50.653] DEBUG [http-nio-10086-exec-10]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:17:50.654] DEBUG [http-nio-10086-exec-10]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:18:00.634] DEBUG [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:18:00.634] DEBUG [http-nio-10086-exec-1]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:18:00.634] INFO  [http-nio-10086-exec-1]c.i.s.Controller - Nginx success
+[14:18:00.635] DEBUG [http-nio-10086-exec-1]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:18:00.636] DEBUG [http-nio-10086-exec-1]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:18:00.636] DEBUG [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:18:00.822] DEBUG [http-nio-10086-exec-2]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:18:00.823] DEBUG [http-nio-10086-exec-2]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:18:00.823] INFO  [http-nio-10086-exec-2]c.i.s.Controller - Nginx success
+[14:18:00.823] DEBUG [http-nio-10086-exec-2]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:18:00.823] DEBUG [http-nio-10086-exec-2]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:18:00.824] DEBUG [http-nio-10086-exec-2]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:18:00.992] DEBUG [http-nio-10086-exec-3]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:18:00.992] DEBUG [http-nio-10086-exec-3]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:18:00.993] INFO  [http-nio-10086-exec-3]c.i.s.Controller - Nginx success
+[14:18:00.993] DEBUG [http-nio-10086-exec-3]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:18:00.993] DEBUG [http-nio-10086-exec-3]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:18:00.993] DEBUG [http-nio-10086-exec-3]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:18:01.177] DEBUG [http-nio-10086-exec-4]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:18:01.178] DEBUG [http-nio-10086-exec-4]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:18:01.178] INFO  [http-nio-10086-exec-4]c.i.s.Controller - Nginx success
+[14:18:01.178] DEBUG [http-nio-10086-exec-4]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:18:01.178] DEBUG [http-nio-10086-exec-4]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:18:01.179] DEBUG [http-nio-10086-exec-4]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:18:01.347] DEBUG [http-nio-10086-exec-5]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:18:01.348] DEBUG [http-nio-10086-exec-5]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:18:01.348] INFO  [http-nio-10086-exec-5]c.i.s.Controller - Nginx success
+[14:18:01.348] DEBUG [http-nio-10086-exec-5]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:18:01.348] DEBUG [http-nio-10086-exec-5]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:18:01.349] DEBUG [http-nio-10086-exec-5]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:18:01.519] DEBUG [http-nio-10086-exec-6]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:18:01.520] DEBUG [http-nio-10086-exec-6]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:18:01.520] INFO  [http-nio-10086-exec-6]c.i.s.Controller - Nginx success
+[14:18:01.520] DEBUG [http-nio-10086-exec-6]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:18:01.520] DEBUG [http-nio-10086-exec-6]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:18:01.521] DEBUG [http-nio-10086-exec-6]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:18:01.720] DEBUG [http-nio-10086-exec-7]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:18:01.720] DEBUG [http-nio-10086-exec-7]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:18:01.721] INFO  [http-nio-10086-exec-7]c.i.s.Controller - Nginx success
+[14:18:01.721] DEBUG [http-nio-10086-exec-7]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:18:01.721] DEBUG [http-nio-10086-exec-7]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:18:01.721] DEBUG [http-nio-10086-exec-7]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:18:11.301] DEBUG [http-nio-10086-exec-8]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:18:11.301] DEBUG [http-nio-10086-exec-8]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:18:11.301] INFO  [http-nio-10086-exec-8]c.i.s.Controller - Nginx success
+[14:18:11.302] DEBUG [http-nio-10086-exec-8]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:18:11.302] DEBUG [http-nio-10086-exec-8]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:18:11.302] DEBUG [http-nio-10086-exec-8]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:18:11.519] DEBUG [http-nio-10086-exec-9]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:18:11.519] DEBUG [http-nio-10086-exec-9]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:18:11.519] INFO  [http-nio-10086-exec-9]c.i.s.Controller - Nginx success
+[14:18:11.520] DEBUG [http-nio-10086-exec-9]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:18:11.520] DEBUG [http-nio-10086-exec-9]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:18:11.520] DEBUG [http-nio-10086-exec-9]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:18:11.722] DEBUG [http-nio-10086-exec-10]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:18:11.722] DEBUG [http-nio-10086-exec-10]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:18:11.722] INFO  [http-nio-10086-exec-10]c.i.s.Controller - Nginx success
+[14:18:11.722] DEBUG [http-nio-10086-exec-10]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:18:11.722] DEBUG [http-nio-10086-exec-10]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:18:11.723] DEBUG [http-nio-10086-exec-10]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:18:11.906] DEBUG [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:18:11.906] DEBUG [http-nio-10086-exec-1]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:18:11.906] INFO  [http-nio-10086-exec-1]c.i.s.Controller - Nginx success
+[14:18:11.907] DEBUG [http-nio-10086-exec-1]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:18:11.907] DEBUG [http-nio-10086-exec-1]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:18:11.907] DEBUG [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:18:12.076] DEBUG [http-nio-10086-exec-2]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:18:12.076] DEBUG [http-nio-10086-exec-2]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:18:12.077] INFO  [http-nio-10086-exec-2]c.i.s.Controller - Nginx success
+[14:18:12.077] DEBUG [http-nio-10086-exec-2]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:18:12.077] DEBUG [http-nio-10086-exec-2]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:18:12.077] DEBUG [http-nio-10086-exec-2]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:18:12.264] DEBUG [http-nio-10086-exec-3]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:18:12.265] DEBUG [http-nio-10086-exec-3]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:18:12.265] INFO  [http-nio-10086-exec-3]c.i.s.Controller - Nginx success
+[14:18:12.265] DEBUG [http-nio-10086-exec-3]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:18:12.265] DEBUG [http-nio-10086-exec-3]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:18:12.266] DEBUG [http-nio-10086-exec-3]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:18:29.164] DEBUG [http-nio-10086-exec-4]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:18:29.165] DEBUG [http-nio-10086-exec-4]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:18:29.165] INFO  [http-nio-10086-exec-4]c.i.s.Controller - Nginx success
+[14:18:29.165] DEBUG [http-nio-10086-exec-4]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:18:29.165] DEBUG [http-nio-10086-exec-4]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:18:29.166] DEBUG [http-nio-10086-exec-4]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:18:29.364] DEBUG [http-nio-10086-exec-5]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:18:29.364] DEBUG [http-nio-10086-exec-5]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:18:29.364] INFO  [http-nio-10086-exec-5]c.i.s.Controller - Nginx success
+[14:18:29.364] DEBUG [http-nio-10086-exec-5]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:18:29.364] DEBUG [http-nio-10086-exec-5]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:18:29.365] DEBUG [http-nio-10086-exec-5]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:18:29.575] DEBUG [http-nio-10086-exec-6]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:18:29.575] DEBUG [http-nio-10086-exec-6]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:18:29.575] INFO  [http-nio-10086-exec-6]c.i.s.Controller - Nginx success
+[14:18:29.576] DEBUG [http-nio-10086-exec-6]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:18:29.576] DEBUG [http-nio-10086-exec-6]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:18:29.576] DEBUG [http-nio-10086-exec-6]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:18:29.748] DEBUG [http-nio-10086-exec-7]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:18:29.749] DEBUG [http-nio-10086-exec-7]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:18:29.749] INFO  [http-nio-10086-exec-7]c.i.s.Controller - Nginx success
+[14:18:29.749] DEBUG [http-nio-10086-exec-7]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:18:29.749] DEBUG [http-nio-10086-exec-7]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:18:29.750] DEBUG [http-nio-10086-exec-7]o.s.w.s.DispatcherServlet - Completed 200 OK
+[14:18:29.916] DEBUG [http-nio-10086-exec-8]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[14:18:29.916] DEBUG [http-nio-10086-exec-8]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[14:18:29.916] INFO  [http-nio-10086-exec-8]c.i.s.Controller - Nginx success
+[14:18:29.916] DEBUG [http-nio-10086-exec-8]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[14:18:29.916] DEBUG [http-nio-10086-exec-8]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[14:18:29.917] DEBUG [http-nio-10086-exec-8]o.s.w.s.DispatcherServlet - Completed 200 OK
+[15:18:56.499] DEBUG [http-nio-10086-exec-9]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[15:18:56.499] DEBUG [http-nio-10086-exec-9]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[15:18:56.499] INFO  [http-nio-10086-exec-9]c.i.s.Controller - Nginx success
+[15:18:56.500] DEBUG [http-nio-10086-exec-9]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[15:18:56.500] DEBUG [http-nio-10086-exec-9]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[15:18:56.501] DEBUG [http-nio-10086-exec-9]o.s.w.s.DispatcherServlet - Completed 200 OK
+[15:18:57.308] DEBUG [http-nio-10086-exec-10]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[15:18:57.309] DEBUG [http-nio-10086-exec-10]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[15:18:57.309] INFO  [http-nio-10086-exec-10]c.i.s.Controller - Nginx success
+[15:18:57.309] DEBUG [http-nio-10086-exec-10]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[15:18:57.309] DEBUG [http-nio-10086-exec-10]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[15:18:57.309] DEBUG [http-nio-10086-exec-10]o.s.w.s.DispatcherServlet - Completed 200 OK
+[15:18:57.513] DEBUG [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[15:18:57.513] DEBUG [http-nio-10086-exec-1]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[15:18:57.513] INFO  [http-nio-10086-exec-1]c.i.s.Controller - Nginx success
+[15:18:57.514] DEBUG [http-nio-10086-exec-1]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[15:18:57.514] DEBUG [http-nio-10086-exec-1]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[15:18:57.514] DEBUG [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - Completed 200 OK
+[15:18:57.715] DEBUG [http-nio-10086-exec-2]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[15:18:57.716] DEBUG [http-nio-10086-exec-2]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[15:18:57.716] INFO  [http-nio-10086-exec-2]c.i.s.Controller - Nginx success
+[15:18:57.716] DEBUG [http-nio-10086-exec-2]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[15:18:57.716] DEBUG [http-nio-10086-exec-2]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[15:18:57.717] DEBUG [http-nio-10086-exec-2]o.s.w.s.DispatcherServlet - Completed 200 OK
+[15:19:03.978] DEBUG [http-nio-10086-exec-3]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[15:19:03.979] DEBUG [http-nio-10086-exec-3]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[15:19:03.979] INFO  [http-nio-10086-exec-3]c.i.s.Controller - Nginx success
+[15:19:03.979] DEBUG [http-nio-10086-exec-3]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[15:19:03.979] DEBUG [http-nio-10086-exec-3]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[15:19:03.980] DEBUG [http-nio-10086-exec-3]o.s.w.s.DispatcherServlet - Completed 200 OK
+[15:19:04.866] DEBUG [http-nio-10086-exec-4]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[15:19:04.866] DEBUG [http-nio-10086-exec-4]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[15:19:04.866] INFO  [http-nio-10086-exec-4]c.i.s.Controller - Nginx success
+[15:19:04.867] DEBUG [http-nio-10086-exec-4]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[15:19:04.867] DEBUG [http-nio-10086-exec-4]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[15:19:04.867] DEBUG [http-nio-10086-exec-4]o.s.w.s.DispatcherServlet - Completed 200 OK
+[15:19:05.084] DEBUG [http-nio-10086-exec-5]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[15:19:05.084] DEBUG [http-nio-10086-exec-5]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[15:19:05.085] INFO  [http-nio-10086-exec-5]c.i.s.Controller - Nginx success
+[15:19:05.085] DEBUG [http-nio-10086-exec-5]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[15:19:05.085] DEBUG [http-nio-10086-exec-5]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[15:19:05.085] DEBUG [http-nio-10086-exec-5]o.s.w.s.DispatcherServlet - Completed 200 OK
+[15:19:05.288] DEBUG [http-nio-10086-exec-6]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[15:19:05.289] DEBUG [http-nio-10086-exec-6]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[15:19:05.289] INFO  [http-nio-10086-exec-6]c.i.s.Controller - Nginx success
+[15:19:05.289] DEBUG [http-nio-10086-exec-6]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[15:19:05.289] DEBUG [http-nio-10086-exec-6]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[15:19:05.290] DEBUG [http-nio-10086-exec-6]o.s.w.s.DispatcherServlet - Completed 200 OK
+[15:19:28.987] DEBUG [http-nio-10086-exec-7]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[15:19:28.987] DEBUG [http-nio-10086-exec-7]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[15:19:28.987] INFO  [http-nio-10086-exec-7]c.i.s.Controller - Nginx success
+[15:19:28.988] DEBUG [http-nio-10086-exec-7]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[15:19:28.988] DEBUG [http-nio-10086-exec-7]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[15:19:28.988] DEBUG [http-nio-10086-exec-7]o.s.w.s.DispatcherServlet - Completed 200 OK
+[15:19:34.858] DEBUG [http-nio-10086-exec-8]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[15:19:34.858] DEBUG [http-nio-10086-exec-8]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[15:19:34.858] INFO  [http-nio-10086-exec-8]c.i.s.Controller - Nginx success
+[15:19:34.858] DEBUG [http-nio-10086-exec-8]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[15:19:34.858] DEBUG [http-nio-10086-exec-8]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[15:19:34.859] DEBUG [http-nio-10086-exec-8]o.s.w.s.DispatcherServlet - Completed 200 OK
+[15:19:35.107] DEBUG [http-nio-10086-exec-9]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[15:19:35.108] DEBUG [http-nio-10086-exec-9]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[15:19:35.108] INFO  [http-nio-10086-exec-9]c.i.s.Controller - Nginx success
+[15:19:35.108] DEBUG [http-nio-10086-exec-9]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[15:19:35.108] DEBUG [http-nio-10086-exec-9]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[15:19:35.108] DEBUG [http-nio-10086-exec-9]o.s.w.s.DispatcherServlet - Completed 200 OK
+[15:19:35.340] DEBUG [http-nio-10086-exec-10]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[15:19:35.340] DEBUG [http-nio-10086-exec-10]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[15:19:35.340] INFO  [http-nio-10086-exec-10]c.i.s.Controller - Nginx success
+[15:19:35.341] DEBUG [http-nio-10086-exec-10]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[15:19:35.341] DEBUG [http-nio-10086-exec-10]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[15:19:35.341] DEBUG [http-nio-10086-exec-10]o.s.w.s.DispatcherServlet - Completed 200 OK
+[15:19:35.898] DEBUG [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[15:19:35.898] DEBUG [http-nio-10086-exec-1]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[15:19:35.898] INFO  [http-nio-10086-exec-1]c.i.s.Controller - Nginx success
+[15:19:35.899] DEBUG [http-nio-10086-exec-1]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[15:19:35.899] DEBUG [http-nio-10086-exec-1]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[15:19:35.899] DEBUG [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - Completed 200 OK
+[15:19:36.865] DEBUG [http-nio-10086-exec-2]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[15:19:36.865] DEBUG [http-nio-10086-exec-2]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[15:19:36.865] INFO  [http-nio-10086-exec-2]c.i.s.Controller - Nginx success
+[15:19:36.865] DEBUG [http-nio-10086-exec-2]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[15:19:36.865] DEBUG [http-nio-10086-exec-2]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[15:19:36.866] DEBUG [http-nio-10086-exec-2]o.s.w.s.DispatcherServlet - Completed 200 OK
+[15:19:37.932] DEBUG [http-nio-10086-exec-3]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[15:19:37.932] DEBUG [http-nio-10086-exec-3]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[15:19:37.932] INFO  [http-nio-10086-exec-3]c.i.s.Controller - Nginx success
+[15:19:37.932] DEBUG [http-nio-10086-exec-3]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[15:19:37.932] DEBUG [http-nio-10086-exec-3]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[15:19:37.933] DEBUG [http-nio-10086-exec-3]o.s.w.s.DispatcherServlet - Completed 200 OK
+[15:19:39.193] DEBUG [http-nio-10086-exec-4]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[15:19:39.193] DEBUG [http-nio-10086-exec-4]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[15:19:39.193] INFO  [http-nio-10086-exec-4]c.i.s.Controller - Nginx success
+[15:19:39.193] DEBUG [http-nio-10086-exec-4]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[15:19:39.193] DEBUG [http-nio-10086-exec-4]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[15:19:39.194] DEBUG [http-nio-10086-exec-4]o.s.w.s.DispatcherServlet - Completed 200 OK
+[15:19:39.964] DEBUG [http-nio-10086-exec-5]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[15:19:39.964] DEBUG [http-nio-10086-exec-5]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[15:19:39.964] INFO  [http-nio-10086-exec-5]c.i.s.Controller - Nginx success
+[15:19:39.965] DEBUG [http-nio-10086-exec-5]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[15:19:39.965] DEBUG [http-nio-10086-exec-5]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[15:19:39.965] DEBUG [http-nio-10086-exec-5]o.s.w.s.DispatcherServlet - Completed 200 OK
+[15:19:41.584] DEBUG [http-nio-10086-exec-6]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[15:19:41.584] DEBUG [http-nio-10086-exec-6]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[15:19:41.584] INFO  [http-nio-10086-exec-6]c.i.s.Controller - Nginx success
+[15:19:41.585] DEBUG [http-nio-10086-exec-6]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[15:19:41.585] DEBUG [http-nio-10086-exec-6]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[15:19:41.585] DEBUG [http-nio-10086-exec-6]o.s.w.s.DispatcherServlet - Completed 200 OK
+[15:19:42.313] DEBUG [http-nio-10086-exec-7]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[15:19:42.314] DEBUG [http-nio-10086-exec-7]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[15:19:42.314] INFO  [http-nio-10086-exec-7]c.i.s.Controller - Nginx success
+[15:19:42.314] DEBUG [http-nio-10086-exec-7]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[15:19:42.314] DEBUG [http-nio-10086-exec-7]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[15:19:42.315] DEBUG [http-nio-10086-exec-7]o.s.w.s.DispatcherServlet - Completed 200 OK
+[15:19:43.315] DEBUG [http-nio-10086-exec-8]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[15:19:43.315] DEBUG [http-nio-10086-exec-8]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[15:19:43.315] INFO  [http-nio-10086-exec-8]c.i.s.Controller - Nginx success
+[15:19:43.316] DEBUG [http-nio-10086-exec-8]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[15:19:43.316] DEBUG [http-nio-10086-exec-8]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[15:19:43.316] DEBUG [http-nio-10086-exec-8]o.s.w.s.DispatcherServlet - Completed 200 OK
+[15:19:44.361] DEBUG [http-nio-10086-exec-9]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[15:19:44.361] DEBUG [http-nio-10086-exec-9]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[15:19:44.361] INFO  [http-nio-10086-exec-9]c.i.s.Controller - Nginx success
+[15:19:44.362] DEBUG [http-nio-10086-exec-9]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[15:19:44.362] DEBUG [http-nio-10086-exec-9]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[15:19:44.362] DEBUG [http-nio-10086-exec-9]o.s.w.s.DispatcherServlet - Completed 200 OK
+[18:34:27.446] DEBUG [http-nio-10086-exec-10]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[18:34:27.447] DEBUG [http-nio-10086-exec-10]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[18:34:27.447] INFO  [http-nio-10086-exec-10]c.i.s.Controller - Nginx success
+[18:34:27.447] DEBUG [http-nio-10086-exec-10]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[18:34:27.447] DEBUG [http-nio-10086-exec-10]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[18:34:27.448] DEBUG [http-nio-10086-exec-10]o.s.w.s.DispatcherServlet - Completed 200 OK
+[18:34:29.947] DEBUG [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - GET "/nginx", parameters={}
+[18:34:29.947] DEBUG [http-nio-10086-exec-1]o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.imooc.springcloud.Controller#nginx()
+[18:34:29.947] INFO  [http-nio-10086-exec-1]c.i.s.Controller - Nginx success
+[18:34:29.948] DEBUG [http-nio-10086-exec-1]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+[18:34:29.948] DEBUG [http-nio-10086-exec-1]o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["success"]
+[18:34:29.948] DEBUG [http-nio-10086-exec-1]o.s.w.s.DispatcherServlet - Completed 200 OK
