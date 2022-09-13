@@ -1,0 +1,4 @@
+GET http://localhost:40006/sayHi
+
+###
+GET http://localhost:40006/sayHi2
