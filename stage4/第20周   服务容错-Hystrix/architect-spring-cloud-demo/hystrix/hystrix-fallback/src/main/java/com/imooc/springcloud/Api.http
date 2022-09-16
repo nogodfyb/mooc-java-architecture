@@ -2,7 +2,7 @@
 GET http://localhost:50000/fallback
 
 ###
-GET http://localhost:50000/timeout?timeout=2
+GET http://localhost:50000/timeout?timeout=0
 
 ###
 GET http://localhost:50000/cache?name=fyb
