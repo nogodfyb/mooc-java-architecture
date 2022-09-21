@@ -1,0 +1,13 @@
+GET http://localhost:60001/encrypt/status
+
+
+### 加密
+POST http://localhost:60001/encrypt
+
+goot content
+
+### 解密
+POST http://localhost:60001/decrypt
+
+0ddd9ddd521fbdea062f7c96704347652618b612f05b78475f48ec4d220e5ad3
+

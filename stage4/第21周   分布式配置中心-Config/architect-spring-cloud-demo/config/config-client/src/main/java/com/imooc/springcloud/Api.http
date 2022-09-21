@@ -1,0 +1,10 @@
+GET http://localhost:61000/name
+
+###
+GET http://localhost:61000/refresh/words
+
+###
+GET http://localhost:61000/refresh/dinner
+
+###
+POST http://localhost:61000/actuator/refresh

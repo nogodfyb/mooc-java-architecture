@@ -1,0 +1,7 @@
+###
+GET http://localhost:60000/config-consumer/dev/master
+###
+GET http://localhost:60000/config-consumer-dev.yml
+###
+GET http://localhost:60000/config-consumer-prod.json
+
