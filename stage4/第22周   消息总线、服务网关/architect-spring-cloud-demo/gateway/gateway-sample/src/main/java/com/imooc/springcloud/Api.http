@@ -1,0 +1,47 @@
+
+###
+GET http://localhost:65000/actuator
+
+### 查看路由规则
+GET http://localhost:65000/actuator/gateway/routes
+
+###
+GET http://localhost:65000/feign-client/sayHi
+
+### 动态添加路由规则
+POST http://localhost:65000/actuator/gateway/routes/dynamic
+Content-Type: application/json
+
+{
+    "predicates": [
+      {
+        "name": "Path",
+        "args": {
+          "pattern": "/dynamic/**"
+        }
+      }
+    ],
+    "filters": [
+      {
+        "name": "StripPrefix",
+        "args": {
+          "_genkey_0": "1"
+        }
+      }
+    ],
+    "uri": "lb://FEIGN-CLIENT",
+    "order": 0
+}
+
+### 测试添加后的路由规则
+GET http://localhost:65000/dynamic/sayHi
+
+### 删除路由规则
+DELETE http://localhost:65000/actuator/gateway/routes/dynamic
+
+### yml配置的路由规则
+GET http://localhost:65000/yml/sayHi
+
+### Java配置的路由规则
+GET http://localhost:65000/java/sayHi
+name: nogod

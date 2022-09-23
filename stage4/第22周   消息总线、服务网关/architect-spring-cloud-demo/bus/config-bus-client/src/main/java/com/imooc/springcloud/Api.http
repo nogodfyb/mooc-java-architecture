@@ -1,0 +1,4 @@
+GET http://localhost:61002/refresh/words
+
+### 触发配置中心推送更新给客户端集群
+POST http://localhost:60002/actuator/bus-refresh
