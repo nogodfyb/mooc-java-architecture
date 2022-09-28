@@ -13,24 +13,24 @@ POST http://localhost:65000/actuator/gateway/routes/dynamic
 Content-Type: application/json
 
 {
-    "predicates": [
-      {
-        "name": "Path",
-        "args": {
-          "pattern": "/dynamic/**"
-        }
+  "predicates": [
+    {
+      "name": "Path",
+      "args": {
+        "pattern": "/dynamic/**"
       }
-    ],
-    "filters": [
-      {
-        "name": "StripPrefix",
-        "args": {
-          "_genkey_0": "1"
-        }
+    }
+  ],
+  "filters": [
+    {
+      "name": "StripPrefix",
+      "args": {
+        "_genkey_0": "1"
       }
-    ],
-    "uri": "lb://FEIGN-CLIENT",
-    "order": 0
+    }
+  ],
+  "uri": "lb://FEIGN-CLIENT",
+  "order": 0
 }
 
 ### 测试添加后的路由规则
@@ -45,3 +45,11 @@ GET http://localhost:65000/yml/sayHi
 ### Java配置的路由规则
 GET http://localhost:65000/java/sayHi
 name: nogod
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5YW8iLCJleHAiOjE2NjQyNzg5MzIsImlhdCI6MTY2NDI3ODg3MiwidXNlcm5hbWUiOiJub2dvZGZ5YiJ9.8hJE1X3ULJX4ZJWfXUxXw1byZ70oUXeQKTN9MLadg0I
+imooc-user-name: nogodfyb
+
+### 网关层面实现用户鉴权
+POST http://localhost:65000/auth-service/login
+Content-Type: application/x-www-form-urlencoded
+
+username=nogodfyb&password=123

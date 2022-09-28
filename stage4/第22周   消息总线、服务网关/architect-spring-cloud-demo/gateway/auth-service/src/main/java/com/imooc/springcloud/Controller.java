@@ -49,7 +49,9 @@ public class Controller {
     @PostMapping("/refresh")
     @ResponseBody
     public AuthResponse refresh(@RequestParam String refreshToken) {
+
         Account account = (Account) redisTemplate.opsForValue().get(refreshToken);
+
         if (account == null) {
             return AuthResponse.builder()
                     .code(USER_NOT_FOUND)
@@ -78,4 +80,5 @@ public class Controller {
                 .code(success ? SUCCESS : USER_NOT_FOUND)
                 .build();
     }
+
 }

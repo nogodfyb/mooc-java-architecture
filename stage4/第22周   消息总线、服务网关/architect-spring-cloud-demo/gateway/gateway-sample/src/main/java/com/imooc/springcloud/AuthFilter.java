@@ -1,7 +1,6 @@
 package com.imooc.springcloud;
 
-import com.imooc.springcloud.AuthResponse;
-import com.imooc.springcloud.AuthService;
+
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +15,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
-//@Component("authFilter")
+@Component("authFilter")
 @Slf4j
 public class AuthFilter implements GatewayFilter, Ordered {
 
@@ -55,7 +54,7 @@ public class AuthFilter implements GatewayFilter, Ordered {
 
         //todo 如果响应中需要放数据，也可以放在response的header中
         response.setStatusCode(HttpStatus.OK);
-        response.getHeaders().add("imooc-username",username);
+        response.getHeaders().add("imooc-username", username);
         return chain.filter(exchange.mutate()
                 .request(buildReuqest)
                 .response(response)
@@ -66,4 +65,5 @@ public class AuthFilter implements GatewayFilter, Ordered {
     public int getOrder() {
         return 0;
     }
+
 }

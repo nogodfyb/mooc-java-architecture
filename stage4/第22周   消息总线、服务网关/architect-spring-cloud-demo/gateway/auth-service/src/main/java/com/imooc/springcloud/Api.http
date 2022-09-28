@@ -1,0 +1,11 @@
+### 登录
+POST http://localhost:65100/login
+Content-Type: application/x-www-form-urlencoded
+
+username=nogodfyb&password=123
+
+### 刷新token
+POST http://localhost:65100/refresh?refreshToken=4795a0ff-0322-48e1-8da0-8989a0ca96d4
+
+### 校验token
+GET http://localhost:65100/verify?username=nogodfyb&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5YW8iLCJleHAiOjE2NjQyNjUwNzUsImlhdCI6MTY2NDI2NTAxNSwidXNlcm5hbWUiOiJub2dvZGZ5YiJ9.mmGgnI3xQiucnLdXKNqcM10sDhC1BEXTTgP5w5okJx8

@@ -1,6 +1,7 @@
 package com.imooc.springcloud;
 
-import com.imooc.springcloud.AuthService;
+//import com.imooc.springcloud.AuthService;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
@@ -16,7 +17,7 @@ import reactor.core.publisher.Mono;
  * Created by 半仙.
  */
 @Slf4j
-// @Component
+@Component
 // GlobalFilter 全局过滤器
 public class TimerFilter implements GatewayFilter, Ordered {
 
