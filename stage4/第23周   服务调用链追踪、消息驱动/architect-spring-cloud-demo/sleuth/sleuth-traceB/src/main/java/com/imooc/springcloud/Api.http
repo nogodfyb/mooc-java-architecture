@@ -1,0 +1,5 @@
+GET http://localhost:62001/traceB
+
+
+### A调用B
+GET http://localhost:62000/traceA
