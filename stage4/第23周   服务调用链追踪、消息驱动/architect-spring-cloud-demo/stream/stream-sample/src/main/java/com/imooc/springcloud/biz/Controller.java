@@ -18,23 +18,24 @@ public class Controller {
     @Autowired
     private MyTopic producer;
 
-//    @Autowired
-//    private GroupTopic groupTopicProducer;
-//
-//    @Autowired
+    @Autowired
+    private GroupTopic groupTopicProducer;
+
+
+    //    @Autowired
 //    private DelayedTopic delayedTopicProducer;
 //
-//    @Autowired
-//    private ErrorTopic errorTopicProducer;
+    @Autowired
+    private ErrorTopic errorTopicProducer;
+
+    @Autowired
+    private RequeueTopic requeueTopicProducer;
+    //
+    @Autowired
+    private DlqTopic dlqTopicProducer;
 //
-//    @Autowired
-//    private RequeueTopic requeueTopicProducer;
-//
-//    @Autowired
-//    private DlqTopic dlqTopicProducer;
-//
-//    @Autowired
-//    private FallbackTopic fallbackTopicProducer;
+    @Autowired
+    private FallbackTopic fallbackTopicProducer;
 
     // 简单广播消息
     @PostMapping("send")
@@ -43,10 +44,10 @@ public class Controller {
     }
 
     // 消息分组和消息分区
-/*    @PostMapping("sendToGroup")
+    @PostMapping("sendToGroup")
     public void sendMessageToGroup(@RequestParam(value = "body") String body) {
         groupTopicProducer.output().send(MessageBuilder.withPayload(body).build());
-    }*/
+    }
 
     // 延迟消息
 /*    @PostMapping("sendDM")
@@ -65,32 +66,32 @@ public class Controller {
     }*/
 
     // 异常重试（单机版）
-/*    @PostMapping("sendError")
+    @PostMapping("sendError")
     public void sendErrorMessage(@RequestParam(value = "body") String body) {
         MessageBean msg = new MessageBean();
         msg.setPayload(body);
         errorTopicProducer.output().send(MessageBuilder.withPayload(msg).build());
-    }*/
+    }
 
     // 异常重试（联机版 - 重新入列）
-/*    @PostMapping("requeue")
+    @PostMapping("requeue")
     public void sendErrorMessageToMQ(@RequestParam(value = "body") String body) {
         MessageBean msg = new MessageBean();
         msg.setPayload(body);
         requeueTopicProducer.output().send(MessageBuilder.withPayload(msg).build());
-    }*/
+    }
 
     // 死信队列测试
-/*    @PostMapping("dlq")
+    @PostMapping("dlq")
     public void sendMessageToDlq(@RequestParam(value = "body") String body) {
         MessageBean msg = new MessageBean();
         msg.setPayload(body);
         dlqTopicProducer.output().send(MessageBuilder.withPayload(msg).build());
-    }*/
+    }
 
 
     // fallback + 升版
-/*    @PostMapping("fallback")
+    @PostMapping("fallback")
     public void sendMessageToFallback(
             @RequestParam(value = "body") String body,
             @RequestParam(value = "version", defaultValue = "1.0") String version) {
@@ -100,6 +101,6 @@ public class Controller {
                 MessageBuilder.withPayload(msg)
                         .setHeader("version", version)
                         .build());
-    }*/
+    }
 
 }

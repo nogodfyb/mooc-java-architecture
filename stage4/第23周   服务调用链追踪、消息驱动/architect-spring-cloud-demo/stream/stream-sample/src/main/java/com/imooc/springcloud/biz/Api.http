@@ -1,1 +1,14 @@
 POST http://localhost:63003/send?body=hello
+
+###
+POST http://localhost:63003/sendToGroup?body=helloworld
+
+
+###
+POST http://localhost:63003/sendError?body=helloworld
+
+###
+POST http://localhost:63003/requeue?body=helloworld
+
+###
+POST http://localhost:63003/fallback?body=helloworld&version=2.0

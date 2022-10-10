@@ -18,12 +18,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 @EnableBinding(value = {
         Sink.class,
         MyTopic.class,
-//        GroupTopic.class,
+        GroupTopic.class,
 //        DelayedTopic.class,
-//        ErrorTopic.class,
-//        RequeueTopic.class,
-//        DlqTopic.class,
-//        FallbackTopic.class
+        ErrorTopic.class,
+        RequeueTopic.class,
+        DlqTopic.class,
+        FallbackTopic.class
 }
 )
 public class StreamConsumer {
@@ -42,10 +42,10 @@ public class StreamConsumer {
     }
 
     // 消息分组 & 消费分区示例
-/*    @StreamListener(GroupTopic.INPUT)
+    @StreamListener(GroupTopic.INPUT)
     public void consumeGroupMessage(Object payload) {
         log.info("Group message consumed successfully, payload={}", payload);
-    }*/
+    }
 
     // 延迟消息示例
 /*    @StreamListener(DelayedTopic.INPUT)
@@ -54,7 +54,7 @@ public class StreamConsumer {
     }*/
 
     // 异常重试（单机版）
-/*    @StreamListener(ErrorTopic.INPUT)
+    @StreamListener(ErrorTopic.INPUT)
     public void consumeErrorMessage(MessageBean bean) {
         log.info("Are you OK?");
 
@@ -65,21 +65,22 @@ public class StreamConsumer {
             log.info("What's your problem?");
             throw new RuntimeException("I'm not OK");
         }
-    }*/
+
+    }
 
     // 异常重试（联机版-重新入列）
-/*    @StreamListener(RequeueTopic.INPUT)
+    @StreamListener(RequeueTopic.INPUT)
     public void requeueErrorMessage(MessageBean bean) {
         log.info("Are you OK?");
         try {
             Thread.sleep(3000L);
         } catch (Exception e) {
         }
-//        throw new RuntimeException("I'm not OK");
-    }*/
+        // throw new RuntimeException("I'm not OK");
+    }
 
     // 死信队列
-/*    @StreamListener(DlqTopic.INPUT)
+    @StreamListener(DlqTopic.INPUT)
     public void consumeDlqMessage(MessageBean bean) {
         log.info("Dlq - Are you OK?");
         if (count.incrementAndGet() % 3 == 0) {
@@ -88,11 +89,11 @@ public class StreamConsumer {
             log.info("Dlq - What's your problem?");
             throw new RuntimeException("I'm not OK");
         }
-    }*/
+    }
 
 
     // Fallback + 升级版本
-/*    @StreamListener(FallbackTopic.INPUT)
+    @StreamListener(FallbackTopic.INPUT)
     public void goodbyeBadGuy(MessageBean bean,
                               @Header("version") String version) {
         log.info("Fallback - Are you OK?");
@@ -106,12 +107,15 @@ public class StreamConsumer {
         } else {
             log.info("Fallback - version={}", version);
         }
-    }*/
+
+    }
 
     // 降级流程
-/*    @ServiceActivator(inputChannel = "fallback-topic.fallback-group.errors")
+    @ServiceActivator(inputChannel = "fallback-topic.fallback-group.errors")
     public void fallback(Message<?> message) {
+
         log.info("fallback entered");
-    }*/
+
+    }
 
 }
