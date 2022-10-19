@@ -1,0 +1,12 @@
+GET http://localhost:8001/flow
+
+
+###
+GET http://localhost:8001/degrade
+
+###
+GET http://localhost:8001/flow-test
+
+
+###
+GET http://localhost:8001/degrade-test
